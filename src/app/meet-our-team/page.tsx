@@ -18,17 +18,18 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col sm:flex-row mb-8 w-full bg-white shadow-lg">
+    <div className="flex flex-col sm:flex-row mb-8 w-full h-auto bg-white shadow-lg">
       <Image
-        className="w-full sm:w-1/3"
-        width={300}
-        height={300}
         src={profilePhoto.url}
         alt={profilePhoto.title}
+        width={300}
+        height={500}
+        loading="lazy"
+        className="self-center"
       />
       <div className="flex flex-col p-4 flex-1">
         <h5 className="text-xl font-bold">{name}</h5>
-        <h6>{role}</h6>
+        <h6 className="text-gray-700 py-2">{role}</h6>
         <p>{description}</p>
       </div>
     </div>
@@ -41,9 +42,11 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-screen px-4">
       <hr className="w-full mt-8 mb-4 border-t border-gray-700" />
-      <h3 className="self-start text-3xl mb-3">{title}</h3>
+      <div className="flex justify-center w-full mb-3 pb-4">
+        <h3 className="text-5xl text-center">{title}</h3>
+      </div>
     </div>
   );
 };
@@ -78,10 +81,10 @@ export default async function MeetOurTeam() {
       <h4 className="text-4xl text-center my-5">{teamMembers.heading}</h4>
       <Image
         src={teamMembers.mainPhoto.url}
+        alt={teamMembers.mainPhoto.title}
         height={300}
         width={500}
-        loading="lazy"
-        alt="Main Photo"
+        priority
       />
       <Section title={VETERINARIANS} />
       {veterinarians.map((vet) => (

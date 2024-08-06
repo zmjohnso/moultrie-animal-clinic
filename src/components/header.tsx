@@ -58,6 +58,7 @@ export default function Header() {
               href="https://www.facebook.com/Moultrieanimalclinic"
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden lg:block"
             >
               <button
                 type="button"
@@ -70,6 +71,7 @@ export default function Header() {
               href="https://www.pinterest.com/moultrieanimal/"
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden lg:block"
             >
               <button
                 type="button"
