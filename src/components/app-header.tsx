@@ -1,10 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Facebook from "/public/brand-icons/facebook.svg";
 import Pinterest from "/public/brand-icons/pinterest.svg";
-import { Menu, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { MobileMenu } from "./mobile-menu";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -85,30 +84,7 @@ export function AppHeaderComponent() {
               />
             </Link>
 
-            {/* Mobile Menu */}
-            <div className="lg:hidden">
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                  <nav className="flex flex-col space-y-4 mt-4">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="px-4 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </nav>
-                </SheetContent>
-              </Sheet>
-            </div>
+            <MobileMenu navItems={navItems} />
           </div>
         </div>
       </div>

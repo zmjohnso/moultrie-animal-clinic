@@ -25,7 +25,7 @@ export function HomePageComponent() {
               </h2>
               <p className="mb-4">
                 At Moultrie Animal Clinic, we understand that your pets are more
-                than just animals – they're family. Our team of experienced
+                than just animals – they&apos;re family. Our team of experienced
                 veterinarians and staff are dedicated to providing the highest
                 quality care for your beloved companions.
               </p>
@@ -126,7 +126,7 @@ export function HomePageComponent() {
               New Clients Welcome
             </h2>
             <p className="text-center mb-6">
-              We're always excited to meet new furry friends and their families.
+              We&apos;re always excited to meet new furry friends and their families.
               Learn what to expect on your first visit.
             </p>
             <div className="text-center">
@@ -145,7 +145,7 @@ export function HomePageComponent() {
               Contact Us
             </h2>
             <p className="text-center mb-6">
-              Have questions or need to schedule an appointment? We're here to
+              Have questions or need to schedule an appointment? We&apos;re here to
               help!
             </p>
             <div className="text-center">
