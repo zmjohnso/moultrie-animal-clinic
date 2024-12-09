@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Printer, MapPin } from "lucide-react";
+import { Phone, Mail, Printer, MapPin, Clock } from "lucide-react";
 import FacebookColor from "/public/brand-icons/facebook-color.svg";
 import PinterestColor from "/public/brand-icons/pinterest-color.svg";
 import Link from "next/link";
@@ -65,6 +65,44 @@ export function ContactPageComponent() {
                   title="Google Map of Moultrie Animal Clinic"
                 ></iframe>
               </div>
+            </div>
+          </div>
+          <div className="flex items-start space-x-4">
+            <Clock className="h-5 w-5 text-gray-500 mt-1" />
+            <div className="flex flex-col w-full">
+              <h3 className="font-semibold mb-2">Hours of Operation</h3>
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr>
+                    <td className="py-1 pr-4">Monday</td>
+                    <td>7:00 AM - 5:30 PM</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Tuesday</td>
+                    <td>7:00 AM - 5:30 PM</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Wednesday</td>
+                    <td>7:00 AM - 3:00 PM</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Thursday</td>
+                    <td>7:00 AM - 5:30 PM</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Friday</td>
+                    <td>7:00 AM - 5:30 PM</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Saturday</td>
+                    <td>Closed</td>
+                  </tr>
+                  <tr>
+                    <td className="py-1 pr-4">Sunday</td>
+                    <td>Closed</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <div className="flex space-x-4 pt-4">

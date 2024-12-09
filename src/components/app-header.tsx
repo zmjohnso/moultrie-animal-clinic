@@ -20,7 +20,7 @@ const navItems = [
 export function AppHeaderComponent() {
   return (
     <header className="border-b bg-white shadow-sm">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -28,9 +28,9 @@ export function AppHeaderComponent() {
               <Image
                 src="/moultrie_logo_color.jpg"
                 alt="Moultrie Animal Clinic Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto"
+                width={200}
+                height={67}
+                className="h-16 w-auto"
               />
             </Link>
           </div>
