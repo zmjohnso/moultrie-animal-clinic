@@ -15,27 +15,26 @@ interface TeamMemberCardProps {
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   name,
   role,
-  profilePhoto,
   description,
+  profilePhoto,
 }) => {
   return (
     <Card className="w-full mb-6 overflow-hidden">
-      <div className="flex flex-col sm:flex-row">
-        <div className="sm:w-1/3">
+      <div className="flex flex-col sm:flex-row h-full">
+        <div className="sm:w-1/3 relative aspect-[3/4]">
           <Image
             src={profilePhoto.url}
             alt={profilePhoto.title}
-            width={300}
-            height={400}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
-        <div className="sm:w-2/3">
+        <div className="sm:w-2/3 flex flex-col">
           <CardHeader>
             <CardTitle>{name}</CardTitle>
             <p className="text-sm text-muted-foreground">{role}</p>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-grow">
             <p className="text-sm">{description}</p>
           </CardContent>
         </div>

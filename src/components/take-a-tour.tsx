@@ -4,8 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Link from "next/link";
 import { TakeATour } from "@/lib/types";
 
@@ -43,8 +42,6 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
-// eventually portion out the sections that don't need to be client components
-// i.e., probably only the image gallery needs to be client-side rendered
 export function TakeATourComponent(takeATourPage: TakeATour) {
   const images = takeATourPage.clinicPhotosCollection.items;
   const [currentImage, setCurrentImage] = useState(0);
@@ -76,19 +73,22 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
       </Card>
 
       <div className="relative mb-8">
-        <div className="overflow-hidden rounded-lg shadow-lg">
-          <Image
-            src={images[currentImage].url}
-            alt={images[currentImage].title}
-            width={600}
-            height={400}
-            className="w-full h-auto"
-          />
+        <div className="overflow-hidden rounded-lg shadow-lg bg-gray-200">
+          <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            {" "}
+            {/* 16:9 Aspect Ratio */}
+            <Image
+              src={images[currentImage].url}
+              alt={images[currentImage].title}
+              fill
+              className="object-contain"
+            />
+          </div>
         </div>
         <Button
           variant="outline"
           size="icon"
-          className="absolute top-1/2 left-4 transform -translate-y-1/2"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white"
           onClick={prevImage}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -96,7 +96,7 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
         <Button
           variant="outline"
           size="icon"
-          className="absolute top-1/2 right-4 transform -translate-y-1/2"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white"
           onClick={nextImage}
         >
           <ChevronRight className="h-4 w-4" />
