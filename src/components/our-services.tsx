@@ -86,7 +86,7 @@ export function OurServicesComponent() {
 
       <Card className="mt-8">
         <CardContent className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Additional Services</h2>
+          <h3 className="text-2xl font-semibold mb-4">Additional Services</h3>
           <ul className="list-disc pl-6 space-y-2">
             <li>Microchipping</li>
             <li>Nutritional Counseling</li>

@@ -183,7 +183,10 @@ export function RegistrationFormComponent() {
                   <div className="space-y-2">
                     <Label htmlFor={`species-${petIndex}`}>Species</Label>
                     <Select name={`species-${petIndex}`} required>
-                      <SelectTrigger id={`species-${petIndex}`}>
+                      <SelectTrigger
+                        id={`species-${petIndex}`}
+                        aria-label="Select species"
+                      >
                         <SelectValue placeholder="Select species" />
                       </SelectTrigger>
                       <SelectContent>
@@ -245,7 +248,10 @@ export function RegistrationFormComponent() {
                   <div className="space-y-2">
                     <Label htmlFor={`sex-${petIndex}`}>Sex</Label>
                     <Select name={`sex-${petIndex}`} required>
-                      <SelectTrigger id={`sex-${petIndex}`}>
+                      <SelectTrigger
+                        id={`sex-${petIndex}`}
+                        aria-label="Select sex"
+                      >
                         <SelectValue placeholder="Select sex" />
                       </SelectTrigger>
                       <SelectContent>

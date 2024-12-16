@@ -89,6 +89,7 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
           variant="outline"
           size="icon"
           className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+          aria-label="Previous Image"
           onClick={prevImage}
         >
           <ChevronLeft className="h-4 w-4" />
@@ -97,6 +98,7 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
           variant="outline"
           size="icon"
           className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+          aria-label="Next Image"
           onClick={nextImage}
         >
           <ChevronRight className="h-4 w-4" />
@@ -105,7 +107,7 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
 
       <div className="text-center mb-8">
         <p className="font-semibold">{images[currentImage].title}</p>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-foreground">
           Image {currentImage + 1} of {images.length}
         </p>
       </div>

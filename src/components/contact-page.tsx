@@ -70,7 +70,7 @@ export function ContactPageComponent() {
           <div className="flex items-start space-x-4">
             <Clock className="h-5 w-5 text-gray-500 mt-1" />
             <div className="flex flex-col w-full">
-              <h3 className="font-semibold mb-2">Hours of Operation</h3>
+              <h2 className="font-semibold mb-2">Hours of Operation</h2>
               <table className="w-full text-sm">
                 <tbody>
                   <tr>

@@ -18,7 +18,7 @@ export function HomePageComponent() {
           height={134}
           className="mx-auto my-8 w-full max-w-xl"
         />
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-foreground">
           Providing compassionate care for your furry family members since 1985
         </p>
       </section>
