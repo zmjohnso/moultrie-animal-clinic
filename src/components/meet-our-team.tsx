@@ -19,23 +19,25 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   profilePhoto,
 }) => {
   return (
-    <Card className="w-full mb-6 overflow-hidden">
+    <Card className="w-full mb-4 overflow-hidden">
       <div className="flex flex-col sm:flex-row h-full">
-        <div className="sm:w-1/3 relative aspect-[3/4]">
-          <Image
-            src={profilePhoto.url}
-            alt={profilePhoto.title}
-            fill
-            className="object-cover"
-          />
+        <div className="w-full sm:w-1/4 relative">
+          <div className="aspect-[4/3] sm:aspect-[3/4]">
+            <Image
+              src={profilePhoto.url}
+              alt={profilePhoto.title}
+              fill
+              className="object-contain sm:object-cover"
+            />
+          </div>
         </div>
-        <div className="sm:w-2/3 flex flex-col">
-          <CardHeader>
-            <CardTitle>{name}</CardTitle>
-            <p className="text-sm text-muted-foreground">{role}</p>
+        <div className="w-full sm:w-3/4 flex flex-col">
+          <CardHeader className="py-3">
+            <CardTitle className="text-lg">{name}</CardTitle>
+            <p className="text-xs text-muted-foreground">{role}</p>
           </CardHeader>
-          <CardContent className="flex-grow">
-            <p className="text-sm">{description}</p>
+          <CardContent className="flex-grow py-2">
+            <p className="text-xs">{description}</p>
           </CardContent>
         </div>
       </div>
@@ -49,9 +51,9 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ title }) => {
   return (
-    <div className="w-full mt-12 mb-6">
-      <h2 className="text-3xl font-bold text-center">{title}</h2>
-      <div className="mt-2 mb-6 border-b border-gray-200" />
+    <div className="w-full mt-8 mb-4">
+      <h2 className="text-2xl font-bold text-center">{title}</h2>
+      <div className="mt-2 mb-4 border-b border-gray-200" />
     </div>
   );
 };
@@ -82,31 +84,33 @@ export async function MeetOurTeamComponent() {
   );
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8">
+    <div className="container mx-auto px-4 py-6">
+      <h1 className="text-3xl font-bold text-center mb-6">
         {teamMembers.heading}
       </h1>
-      <div className="flex justify-center mb-12">
+      <div className="flex justify-center mb-8">
         <Image
           src={teamMembers.mainPhoto.url}
           alt={teamMembers.mainPhoto.title}
-          width={800}
-          height={400}
-          className="rounded-lg shadow-lg"
+          width={600}
+          height={300}
+          className="rounded-lg shadow-md"
           priority
         />
       </div>
 
       <Section title={VETERINARIANS} />
-      {veterinarians.map((vet) => (
-        <TeamMemberCard
-          key={vet.name}
-          name={vet.name}
-          role={vet.role}
-          profilePhoto={vet.profilePhoto}
-          description={vet.description}
-        />
-      ))}
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        {veterinarians.map((vet) => (
+          <TeamMemberCard
+            key={vet.name}
+            name={vet.name}
+            role={vet.role}
+            profilePhoto={vet.profilePhoto}
+            description={vet.description}
+          />
+        ))}
+      </div>
 
       {officeManager && (
         <>
@@ -121,15 +125,17 @@ export async function MeetOurTeamComponent() {
       )}
 
       <Section title={VETERINARY_TECHNICIANS} />
-      {veterinaryTechnicians.map((vetTech) => (
-        <TeamMemberCard
-          key={vetTech.name}
-          name={vetTech.name}
-          role={vetTech.role}
-          profilePhoto={vetTech.profilePhoto}
-          description={vetTech.description}
-        />
-      ))}
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        {veterinaryTechnicians.map((vetTech) => (
+          <TeamMemberCard
+            key={vetTech.name}
+            name={vetTech.name}
+            role={vetTech.role}
+            profilePhoto={vetTech.profilePhoto}
+            description={vetTech.description}
+          />
+        ))}
+      </div>
 
       {receptionist && (
         <>
