@@ -40,6 +40,8 @@ export interface ClinicPhotosCollection {
 }
 
 export interface TakeATour {
+  heading: string;
+  description: string;
   clinicPhotosCollection: ClinicPhotosCollection;
 }
 

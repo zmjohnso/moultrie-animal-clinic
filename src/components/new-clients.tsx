@@ -52,31 +52,6 @@ export function NewClientsComponent() {
               providing.
             </p>
             <p>
-              No need to worry! If any additional testing is needed, Moultrie
-              Animal Clinic is a modern facility with diagnostic equipment and
-              an in-house laboratory, so most tests can be performed here. We
-              even have a traveling veterinary specialist who performs
-              diagnostic ultrasounds for your pets to avoid referrals and
-              traveling when possible.
-            </p>
-            <p>
-              Our veterinary technician will likely come back to wrap things up
-              and will provide you with helpful pet care information and answer
-              any wellness and care questions you may have. Our front desk staff
-              will process your payment and schedule any needed follow-up
-              appointments.
-            </p>
-            <p>
-              At any time please do not hesitate to ask questions! That is what
-              we are here for!
-            </p>
-            <p>
-              Please know that our goal is to see all our clients and patients
-              on time, and although we have contingencies for emergencies, there
-              will be times where the unexpected will create delays. We will
-              ensure these are minimized as much as possible.
-            </p>
-            <p>
               Please arrive 15 minutes early for your new patient and client
               appointment to give adequate time for filling out paperwork and
               for asking additional questions since you are new to us.

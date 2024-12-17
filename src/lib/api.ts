@@ -38,6 +38,8 @@ const TAKE_A_TOUR_PAGE_QUERY = `
   query {
     takeATourCollection {
       items {
+        heading
+        description
         clinicPhotosCollection {
           items {
             title

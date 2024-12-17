@@ -42,7 +42,11 @@ const StarRating = ({ rating }: { rating: number }) => {
   );
 };
 
-export function TakeATourComponent(takeATourPage: TakeATour) {
+export function TakeATourComponent({
+  takeATourPage,
+}: {
+  takeATourPage: TakeATour;
+}) {
   const images = takeATourPage.clinicPhotosCollection.items;
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -56,7 +60,9 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-6">Take a Tour</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">
+        {takeATourPage.heading}
+      </h1>
       <Card className="mb-8">
         <CardContent className="p-6">
           <p className="text-xl text-center mb-4">
@@ -64,10 +70,7 @@ export function TakeATourComponent(takeATourPage: TakeATour) {
             for your pet.
           </p>
           <p className="text-center text-muted-foreground">
-            At Moultrie Animal Clinic, we pride ourselves on providing a warm,
-            welcoming environment coupled with cutting-edge veterinary
-            technology. Scroll through our gallery to get a glimpse of our
-            facilities and the loving care we provide to our furry patients.
+            {takeATourPage.description}
           </p>
         </CardContent>
       </Card>

@@ -4,9 +4,5 @@ import { getTakeATourPageData } from "@/lib/api";
 export default async function TakeATourPage() {
   const takeATourPage = await getTakeATourPageData();
 
-  return (
-    <TakeATourComponent
-      clinicPhotosCollection={takeATourPage.clinicPhotosCollection}
-    />
-  );
+  return <TakeATourComponent takeATourPage={takeATourPage} />;
 }

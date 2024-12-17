@@ -58,7 +58,7 @@ export function AppHeaderComponent() {
               <span className="sr-only">Contact Us</span>
             </Link>
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/Moultrieanimalclinic"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
@@ -71,7 +71,7 @@ export function AppHeaderComponent() {
               />
             </Link>
             <Link
-              href="https://pinterest.com"
+              href="https://www.pinterest.com/moultrieanimal/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
