@@ -79,9 +79,8 @@ export function HomePageComponent() {
             },
             {
               icon: Phone,
-              title: "Dental Care",
-              description:
-                "Comprehensive dental services to maintain your pet's oral health",
+              title: "Accepting New Clients",
+              description: "New Clients and Snow Birds are always welcome!",
             },
           ].map((service, index) => (
             <Card key={index}>
@@ -95,35 +94,14 @@ export function HomePageComponent() {
             </Card>
           ))}
         </div>
-        <div className="text-center mt-6">
+        <div className="flex justify-evenly mt-6">
           <Button asChild>
             <Link href="/our-services">View All Services</Link>
           </Button>
+          <Button asChild>
+            <Link href="/new-clients">New Client Information</Link>
+          </Button>
         </div>
-      </section>
-
-      <section className="mb-12">
-        <Card>
-          <CardContent className="p-6">
-            <h2 className="text-3xl font-semibold mb-4 text-center">
-              New Clients Welcome
-            </h2>
-            <p className="text-center mb-4">
-              We&apos;re always excited to meet new furry friends and their
-              families. Learn what to expect on your first visit.
-            </p>
-            <p className="text-center mb-6">
-              Snow Birds, we&apos;ve got you covered! We offer part-of-the-year
-              treatment plans for your pets, ensuring they receive consistent
-              care even when you&apos;re only in town seasonally.
-            </p>
-            <div className="text-center">
-              <Button asChild>
-                <Link href="/new-clients">New Client Information</Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
       </section>
 
       <section>
@@ -131,56 +109,55 @@ export function HomePageComponent() {
           <CardHeader>
             <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-4">
-            <p className="text-center mb-4">
-              Have questions or need to schedule an appointment? We&apos;re here
-              to help!
-            </p>
-            <div className="flex items-center space-x-4">
-              <Phone className="h-5 w-5 text-gray-500" />
-              <Link
-                href="tel:+19047975601"
-                className="text-blue-600 hover:underline"
-              >
-                +1 (904) 797-5601
-              </Link>
-            </div>
-            <div className="flex items-start space-x-4">
-              <MapPin className="h-5 w-5 text-gray-500 mt-1" />
-              <div className="flex flex-col w-full">
+          <CardContent className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-4">
+              <p className="mb-4">
+                Have questions or need to schedule an appointment? We&apos;re
+                here to help!
+              </p>
+              <div className="flex items-center space-x-4">
+                <Phone className="h-5 w-5 text-gray-500" />
                 <Link
-                  href="https://www.google.com/maps/search/?api=1&query=3450+US+Hwy+1+S,+Saint+Augustine,+FL+32086"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+19047975601"
                   className="text-blue-600 hover:underline"
                 >
-                  3450 US Hwy 1 S, Saint Augustine, FL 32086
+                  +1 (904) 797-5601
                 </Link>
-                <MapWithSkeleton />
+              </div>
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-5 w-5 text-gray-500 mt-1" />
+                <div className="flex flex-col">
+                  <Link
+                    href="https://www.google.com/maps/search/?api=1&query=3450+US+Hwy+1+S,+Saint+Augustine,+FL+32086"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    3450 US Hwy 1 S, Saint Augustine, FL 32086
+                  </Link>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <Clock className="h-5 w-5 text-gray-500 mt-1" />
+                <div className="flex flex-col w-full">
+                  <h3 className="font-semibold mb-2">Hours of Operation</h3>
+                  <ul className="text-sm space-y-1">
+                    {[
+                      { days: "Mon, Tue, Thu, Fri", time: "7:00 AM - 5:30 PM" },
+                      { days: "Wed", time: "7:00 AM - 3:00 PM" },
+                      { days: "Sat, Sun", time: "Closed" },
+                    ].map((item, index) => (
+                      <li key={index} className="flex justify-between">
+                        <span>{item.days}</span>
+                        <span>{item.time}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="flex items-start space-x-4">
-              <Clock className="h-5 w-5 text-gray-500 mt-1" />
-              <div className="flex flex-col w-full">
-                <h3 className="font-semibold mb-2">Hours of Operation</h3>
-                <ul className="text-sm space-y-1">
-                  {[
-                    { days: "Mon, Tue, Thu, Fri", time: "7:00 AM - 5:30 PM" },
-                    { days: "Wed", time: "7:00 AM - 3:00 PM" },
-                    { days: "Sat, Sun", time: "Closed" },
-                  ].map((item, index) => (
-                    <li key={index} className="flex justify-between">
-                      <span>{item.days}</span>
-                      <span>{item.time}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div className="text-center mt-4">
-              <Button asChild>
-                <Link href="/contact">Get in Touch</Link>
-              </Button>
+            <div>
+              <MapWithSkeleton />
             </div>
           </CardContent>
         </Card>
@@ -193,7 +170,7 @@ function MapWithSkeleton() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   return (
-    <div className="mt-2 w-full h-56 md:h-72 lg:h-96 rounded-md overflow-hidden relative">
+    <div className="w-full h-56 md:h-72 lg:h-96 rounded-md overflow-hidden relative">
       {!isMapLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
           <span className="sr-only">Loading map...</span>

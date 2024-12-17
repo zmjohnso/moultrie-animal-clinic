@@ -36,9 +36,9 @@ const services = [
   },
   {
     icon: Heart,
-    title: "Emergency Care",
+    title: "In-Clinic Laboratory",
     description:
-      "Prompt and efficient care for unexpected illnesses or injuries.",
+      "Diagnostic blood work in-clinic for immediate results",
   },
   {
     icon: Calendar,
