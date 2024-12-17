@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import Facebook from "/public/brand-icons/facebook.svg";
-import Pinterest from "/public/brand-icons/pinterest.svg";
 import { Phone } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
 
@@ -48,43 +47,38 @@ export function AppHeaderComponent() {
             ))}
           </nav>
 
-          {/* Social Links and Phone */}
-          <div className="flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
-            >
-              <Phone className="h-5 w-5" />
-              <span className="sr-only">Contact Us</span>
-            </Link>
-            <Link
-              href="https://www.facebook.com/Moultrieanimalclinic"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
-            >
-              <Image
-                src={Facebook}
-                alt="Facebook Icon"
-                width={20}
-                height={20}
-              />
-            </Link>
-            <Link
-              href="https://www.pinterest.com/moultrieanimal/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
-            >
-              <Image
-                src={Pinterest}
-                alt="Pinterest Icon"
-                width={20}
-                height={20}
-              />
-            </Link>
+          {/* Social Links, Phone, and Phone Number */}
+          <div className="flex flex-col items-end">
+            <div className="flex items-center space-x-4">
+              <Link
+                href="/contact"
+                className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+              >
+                <Phone className="h-5 w-5" />
+                <span className="sr-only">Contact Us</span>
+              </Link>
+              <Link
+                href="https://www.facebook.com/Moultrieanimalclinic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+              >
+                <Image
+                  src={Facebook}
+                  alt="Facebook Icon"
+                  width={20}
+                  height={20}
+                />
+              </Link>
 
-            <MobileMenu navItems={navItems} />
+              <MobileMenu navItems={navItems} />
+            </div>
+            <a
+              href="tel:+19047947170"
+              className="mt-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+            >
+              +1 (904) 794-7170
+            </a>
           </div>
         </div>
       </div>

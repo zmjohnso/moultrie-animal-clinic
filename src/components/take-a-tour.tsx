@@ -4,43 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { TakeATour } from "@/lib/types";
-
-const reviews = [
-  {
-    author: "John D.",
-    rating: 5,
-    text: "Exceptional care for our furry family members! The staff is knowledgeable and compassionate.",
-    date: "2 weeks ago",
-  },
-  {
-    author: "Sarah M.",
-    rating: 5,
-    text: "State-of-the-art facility with a warm, friendly atmosphere. Highly recommend!",
-    date: "1 month ago",
-  },
-  {
-    author: "Mike R.",
-    rating: 4,
-    text: "Great service and care. The only reason for 4 stars is the wait times can be long sometimes.",
-    date: "2 months ago",
-  },
-];
-
-const StarRating = ({ rating }: { rating: number }) => {
-  return (
-    <div className="flex">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`w-4 h-4 ${i < rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
-        />
-      ))}
-    </div>
-  );
-};
 
 export function TakeATourComponent({
   takeATourPage,
@@ -114,27 +80,6 @@ export function TakeATourComponent({
           Image {currentImage + 1} of {images.length}
         </p>
       </div>
-
-      <Card className="mb-8">
-        <CardContent className="p-6">
-          <h2 className="text-2xl font-semibold mb-4">Testimonials</h2>
-          <div className="space-y-4">
-            {reviews.map((review, index) => (
-              <div
-                key={index}
-                className="border-b last:border-b-0 pb-4 last:pb-0"
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <p className="font-semibold">{review.author}</p>
-                  <p className="text-sm text-muted-foreground">{review.date}</p>
-                </div>
-                <StarRating rating={review.rating} />
-                <p className="mt-2">{review.text}</p>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
 
       <div className="text-center">
         <Button asChild>

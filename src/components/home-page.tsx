@@ -4,7 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Stethoscope, Users, Camera, Phone, MapPin, Clock } from "lucide-react";
+import {
+  Stethoscope,
+  Users,
+  Camera,
+  Phone,
+  MapPin,
+  Clock,
+  Star,
+} from "lucide-react";
 import { useState } from "react";
 
 export function HomePageComponent() {
@@ -16,7 +24,7 @@ export function HomePageComponent() {
           alt="Moultrie Animal Clinic Logo"
           width={400}
           height={134}
-          className="mx-auto my-8 w-full max-w-xl"
+          className="mx-auto mb-8 w-full max-w-xl"
         />
         <p className="text-xl text-foreground">
           Providing compassionate care for your furry family members since 1985
@@ -85,7 +93,7 @@ export function HomePageComponent() {
           ].map((service, index) => (
             <Card key={index}>
               <CardHeader>
-                <service.icon className="w-12 h-12 text-primary mb-2" />
+                <service.icon className="w-12 h-12 mb-2" />
                 <CardTitle>{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -109,54 +117,70 @@ export function HomePageComponent() {
           <CardHeader>
             <CardTitle className="text-2xl text-center">Contact Us</CardTitle>
           </CardHeader>
-          <CardContent className="grid gap-4 md:grid-cols-2">
-            <div className="space-y-4">
-              <p className="mb-4">
+          <CardContent className="grid gap-6 md:grid-cols-2">
+            <div className="space-y-6">
+              <p className="text-lg">
                 Have questions or need to schedule an appointment? We&apos;re
                 here to help!
               </p>
-              <div className="flex items-center space-x-4">
-                <Phone className="h-5 w-5 text-gray-500" />
-                <Link
-                  href="tel:+19047975601"
-                  className="text-blue-600 hover:underline"
-                >
-                  +1 (904) 797-5601
-                </Link>
-              </div>
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-5 w-5 text-gray-500 mt-1" />
-                <div className="flex flex-col">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <Phone className="h-6 w-6" />
                   <Link
-                    href="https://www.google.com/maps/search/?api=1&query=3450+US+Hwy+1+S,+Saint+Augustine,+FL+32086"
+                    href="tel:+19047975601"
+                    className="text-lg hover:underline"
+                  >
+                    +1 (904) 797-5601
+                  </Link>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <MapPin className="h-6 w-6 mt-1" />
+                  <div className="flex flex-col">
+                    <Link
+                      href="https://www.google.com/maps/search/?api=1&query=3450+US+Hwy+1+S,+Saint+Augustine,+FL+32086"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline"
+                    >
+                      3450 US Hwy 1 S, Saint Augustine, FL 32086
+                    </Link>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4">
+                  <Clock className="h-6 w-6 mt-1" />
+                  <div className="flex flex-col w-full">
+                    <h3 className="font-semibold mb-2">Hours of Operation</h3>
+                    <ul className="space-y-1">
+                      {[
+                        {
+                          days: "Mon, Tue, Thu, Fri",
+                          time: "7:00 AM - 5:30 PM",
+                        },
+                        { days: "Wed", time: "7:00 AM - 3:00 PM" },
+                        { days: "Sat, Sun", time: "Closed" },
+                      ].map((item, index) => (
+                        <li key={index} className="flex justify-between">
+                          <span className="font-medium">{item.days}</span>
+                          <span>{item.time}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Star className="h-6 w-6" />
+                  <Link
+                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic#lrd=0x88e6c3c1b8b3b3b3:0x1b1b1b1b1b1b1b1b,1,,,"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="hover:underline"
                   >
-                    3450 US Hwy 1 S, Saint Augustine, FL 32086
+                    Read our Google Reviews
                   </Link>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <Clock className="h-5 w-5 text-gray-500 mt-1" />
-                <div className="flex flex-col w-full">
-                  <h3 className="font-semibold mb-2">Hours of Operation</h3>
-                  <ul className="text-sm space-y-1">
-                    {[
-                      { days: "Mon, Tue, Thu, Fri", time: "7:00 AM - 5:30 PM" },
-                      { days: "Wed", time: "7:00 AM - 3:00 PM" },
-                      { days: "Sat, Sun", time: "Closed" },
-                    ].map((item, index) => (
-                      <li key={index} className="flex justify-between">
-                        <span>{item.days}</span>
-                        <span>{item.time}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
             </div>
-            <div>
+            <div className="h-full">
               <MapWithSkeleton />
             </div>
           </CardContent>
@@ -170,7 +194,7 @@ function MapWithSkeleton() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
 
   return (
-    <div className="w-full h-56 md:h-72 lg:h-96 rounded-md overflow-hidden relative">
+    <div className="w-full h-full min-h-[300px] rounded-md overflow-hidden relative">
       {!isMapLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
           <span className="sr-only">Loading map...</span>

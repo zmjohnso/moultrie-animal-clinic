@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Printer, MapPin, Clock } from "lucide-react";
 import FacebookColor from "/public/brand-icons/facebook-color.svg";
-import PinterestColor from "/public/brand-icons/pinterest-color.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -92,8 +91,8 @@ export function ContactPageComponent() {
               <h2 className="font-semibold mb-2">Hours of Operation</h2>
               <ul className="text-sm space-y-1">
                 {hours.map((item, index) => (
-                  <li key={index} className="flex  ">
-                    <span>{item.days}</span>
+                  <li key={index} className="flex justify-between">
+                    <span className="min-w-[140px]">{item.days}</span>
                     <span>{item.time}</span>
                   </li>
                 ))}
@@ -110,20 +109,6 @@ export function ContactPageComponent() {
                 <Image
                   src={FacebookColor}
                   alt="Facebook Icon"
-                  width={24}
-                  height={24}
-                />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="sm">
-              <Link
-                href="https://www.pinterest.com/moultrieanimal/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src={PinterestColor}
-                  alt="Pinterest Icon"
                   width={24}
                   height={24}
                 />
