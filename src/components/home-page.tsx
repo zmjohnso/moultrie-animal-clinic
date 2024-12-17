@@ -170,7 +170,7 @@ export function HomePageComponent() {
                 <div className="flex items-center space-x-4">
                   <Star className="h-6 w-6" />
                   <Link
-                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic#lrd=0x88e6c3c1b8b3b3b3:0x1b1b1b1b1b1b1b1b,1,,,"
+                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"

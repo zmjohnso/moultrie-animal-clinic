@@ -25,7 +25,7 @@ export function AppHeaderComponent() {
           <div className="flex-shrink-0">
             <Link href="/" className="block">
               <Image
-                src="/moultrie_logo_color.jpg"
+                src="/icon.jpg"
                 alt="Moultrie Animal Clinic Logo"
                 width={200}
                 height={67}
@@ -48,7 +48,7 @@ export function AppHeaderComponent() {
           </nav>
 
           {/* Social Links, Phone, and Phone Number */}
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-center">
             <div className="flex items-center space-x-4">
               <Link
                 href="/contact"
@@ -70,8 +70,6 @@ export function AppHeaderComponent() {
                   height={20}
                 />
               </Link>
-
-              <MobileMenu navItems={navItems} />
             </div>
             <a
               href="tel:+19047947170"
@@ -79,6 +77,11 @@ export function AppHeaderComponent() {
             >
               +1 (904) 794-7170
             </a>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className="lg:hidden">
+            <MobileMenu navItems={navItems} />
           </div>
         </div>
       </div>
