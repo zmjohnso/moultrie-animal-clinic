@@ -178,6 +178,11 @@ export function HomePageComponent() {
                     Read our Google Reviews
                   </Link>
                 </div>
+                <div className="flex items-center space-x-4 mt-4">
+                  <Button asChild>
+                    <Link href="/take-a-tour">Take a Tour</Link>
+                  </Button>
+                </div>
               </div>
             </div>
             <div className="h-full">
