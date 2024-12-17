@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { TakeATour } from "@/lib/types";
-import { Testimonials } from "./testimonials";
 
 export function TakeATourComponent({
   takeATourPage,
@@ -78,19 +77,6 @@ export function TakeATourComponent({
         <p className="text-sm text-foreground">
           Image {currentImage + 1} of {images.length}
         </p>
-      </div>
-
-      <Testimonials />
-
-      <div className="text-center mb-8">
-        <Link
-          href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          See more reviews on Google
-        </Link>
       </div>
 
       <div className="text-center">

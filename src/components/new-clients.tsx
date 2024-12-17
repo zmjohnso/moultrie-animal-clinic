@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Testimonials } from "./testimonials";
 
 export function NewClientsComponent() {
   return (
@@ -62,8 +63,22 @@ export function NewClientsComponent() {
           </div>
         </CardContent>
       </Card>
+
+      <Testimonials />
+
+      <div className="text-center mb-8">
+        <Link
+          href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline"
+        >
+          See more reviews on Google
+        </Link>
+      </div>
+
       <div className="flex justify-center">
-        <Button asChild>
+        <Button asChild size="lg" className="text-lg py-6 px-8">
           <Link href="/new-clients/registration-form">
             New Client Registration Form
           </Link>
