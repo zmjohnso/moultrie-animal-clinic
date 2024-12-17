@@ -40,7 +40,7 @@ export function AppHeaderComponent() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-150 ease-in-out"
+                className="px-3 py-2 rounded-md text-sm font-medium text-gray-900 hover:bg-gray-100 transition duration-150 ease-in-out"
               >
                 {item.label}
               </Link>
@@ -52,7 +52,7 @@ export function AppHeaderComponent() {
             <div className="flex items-center space-x-4">
               <Link
                 href="/contact"
-                className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+                className="text-gray-900 transition duration-150 ease-in-out"
               >
                 <Phone className="h-5 w-5" />
                 <span className="sr-only">Contact Us</span>
@@ -61,7 +61,7 @@ export function AppHeaderComponent() {
                 href="https://www.facebook.com/Moultrieanimalclinic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+                className="text-gray-900 transition duration-150 ease-in-out"
               >
                 <Image
                   src={Facebook}
@@ -73,7 +73,7 @@ export function AppHeaderComponent() {
             </div>
             <a
               href="tel:+19047947170"
-              className="mt-1 text-sm font-medium text-gray-700 hover:text-gray-900 transition duration-150 ease-in-out"
+              className="mt-1 text-sm font-medium text-gray-900 transition duration-150 ease-in-out"
             >
               +1 (904) 794-7170
             </a>
