@@ -18,7 +18,7 @@ export function HomePageComponent() {
     <div className="container mx-auto px-4 py-8">
       <section className="text-center mb-12">
         <Image
-          src="/moultrie_logo_color.jpg"
+          src="/home/moultrie-logo-color.jpg"
           alt="Moultrie Animal Clinic Logo"
           width={400}
           height={134}

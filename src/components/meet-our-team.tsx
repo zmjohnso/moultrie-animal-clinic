@@ -83,20 +83,37 @@ export async function MeetOurTeamComponent() {
     (x) => x.jobTitle.title === QUALITY_CONTROL_MANAGER
   );
 
+  const gridPhotos = [
+    { title: "Kramer", url: "/meet-our-team/kramer.jpg" },
+    { title: "Dog Butt", url: "/meet-our-team/dog_butt.jpg" },
+    { title: "Dog BW photo", url: "/meet-our-team/dog-bw.jpg" },
+    { title: "Dog licking cat", url: "/meet-our-team/dog-lick-cat.jpg" },
+    { title: "Dog swimming", url: "/meet-our-team/dog-swimming.jpg" },
+    { title: "Luna", url: "/meet-our-team/luna-spring.jpg" },
+    { title: "Sadie", url: "/meet-our-team/sadie.jpg" },
+    { title: "Treaty Oak", url: "/meet-our-team/treaty-oak.jpg" },
+  ];
+
   return (
     <div className="container mx-auto px-4 py-6">
       <h1 className="text-4xl font-bold text-center mb-6">
         {teamMembers.heading}
       </h1>
-      <div className="flex justify-center mb-8">
-        <Image
-          src={teamMembers.mainPhoto.url}
-          alt={teamMembers.mainPhoto.title}
-          width={600}
-          height={300}
-          className="rounded-lg shadow-md"
-          priority
-        />
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 max-w-3xl mx-auto">
+        {gridPhotos.slice(0, 8).map((photo, index) => (
+          <div
+            key={index}
+            className="aspect-square relative overflow-hidden rounded-lg shadow-md"
+          >
+            <Image
+              src={photo.url}
+              alt={photo.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 30vw, 15vw"
+            />
+          </div>
+        ))}
       </div>
 
       <Section title={VETERINARIANS} />

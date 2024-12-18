@@ -1,21 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Testimonials } from "./testimonials";
 
 export function NewClientsComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Card className="mb-8">
-        <CardHeader>
-          <CardTitle className="text-4xl font-bold text-center">
-            What To Expect
-          </CardTitle>
-        </CardHeader>
+        <CardHeader></CardHeader>
         <CardContent className="flex flex-col items-center">
           <Image
-            src="/new-clients/title_photo.jpg"
+            src="/new-clients/title-photo.jpg"
             alt="New Clients Title Photo"
             width={800}
             height={400}
@@ -27,39 +23,38 @@ export function NewClientsComponent() {
           </h2>
           <div className="space-y-4 text-base sm:text-lg">
             <p>
-              We want your visit to Moultrie Animal Clinic to be the best
-              veterinary experience you ever had! We&apos;re all animal lovers
-              here and we work hard to create a warm, inviting and comfortable
-              environment for you and your pet. We strive for individualized
-              care where you and your pet are never just a number, but part of
-              our family.
+              We&apos;re all animal lovers here! Our team works hard to create a
+              warm, inviting and comfortable environment for you and your pet.
+              We strive for individualized care where you and your pet are never
+              just a number, but part of our family. Our Veterinarians are
+              dedicated to spending time talking with you to address your
+              concerns, complete a thorough physical exam on your pet, recommend
+              any diagnostic testing if needed, and create your pet&apos;s
+              individual treatment plan.
             </p>
             <p>
-              When you check in with our front desk you&apos;ll be greeted by
-              one of our friendly and courteous team members. Next, we will
-              bring you to a dog or cat friendly examination room where a
-              dedicated member of our team will ask a few questions about your
-              pet and get your pet&apos;s vital signs - just like when you go
-              for a visit to your doctor!
+              We welcome new clients and patients! Snowbirds welcome! We
+              recommend that you call and make your first appointment over the
+              phone. We require a deposit over the phone of your first office
+              visit. Change your mind? Don&apos;t worry- if you cancel more than
+              24 hours before your appointment we will issue you a full refund.
+              We will request full medical records prior to your visit so that
+              we have everything we need.
             </p>
             <p>
-              One of our Moultrie Animal Clinic veterinarians will then meet you
-              and your pet. Our doctors are dedicated to spending time talking
-              with you to address your concerns, complete a thorough physical
-              exam on your pet, recommend any diagnostic testing if needed, and
-              create your pet&apos;s individual treatment plan. This is a great
-              time to ask questions. Our veterinary team wants to make sure
-              you&apos;re completely comfortable with the information we&apos;re
-              providing.
-            </p>
-            <p>
-              Please arrive 15 minutes early for your new patient and client
-              appointment to give adequate time for filling out paperwork and
-              for asking additional questions since you are new to us.
+              Want to save some time? Fill out our new client/patient form
+              below!
             </p>
             <p className="font-semibold">
               We are excited to meet you and your pets!
             </p>
+          </div>
+          <div className="flex justify-center">
+            <Button asChild size="lg" className="text-lg py-6 px-8">
+              <Link href="/new-clients/registration-form">
+                New Client Registration Form
+              </Link>
+            </Button>
           </div>
         </CardContent>
       </Card>
@@ -67,20 +62,14 @@ export function NewClientsComponent() {
       <Testimonials />
 
       <div className="text-center mb-8">
-        <Link
-          href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline"
-        >
-          See more reviews on Google
-        </Link>
-      </div>
-
-      <div className="flex justify-center">
-        <Button asChild size="lg" className="text-lg py-6 px-8">
-          <Link href="/new-clients/registration-form">
-            New Client Registration Form
+        <Button asChild size="lg" className="text-lg">
+          <Link
+            href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            See more reviews on Google
           </Link>
         </Button>
       </div>

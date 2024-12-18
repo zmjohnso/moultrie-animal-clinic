@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Stethoscope,
@@ -52,7 +53,14 @@ export function OurServicesComponent() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-6">Our Services</h1>
       <Card className="mb-8">
-        <CardContent className="p-6">
+        <CardContent className="flex flex-col items-center p-6">
+          <Image
+            src="/our-services/title-photo.jpg"
+            alt="Our Services Title Photo"
+            width={800}
+            height={400}
+            className="rounded-lg shadow-lg mb-8"
+          />
           <p className="text-lg mb-4">
             You work hard to ensure that your furry family member has the best
             possible life. That&apos;s why partnering with a locally owned
