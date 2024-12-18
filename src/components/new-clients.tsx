@@ -1,22 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Testimonials } from "./testimonials";
 
 export function NewClientsComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <Card className="mb-8">
-        <CardHeader></CardHeader>
         <CardContent className="flex flex-col items-center">
-          <Image
-            src="/new-clients/title-photo.jpg"
-            alt="New Clients Title Photo"
-            width={800}
-            height={400}
-            className="rounded-lg shadow-lg mb-8"
-          />
+          <div className="w-full max-w-2xl mx-auto">
+            <Image
+              src="/new-clients/title-photo.jpg"
+              alt="New Clients Title Photo"
+              width={800}
+              height={400}
+              className="rounded-lg shadow-lg mb-8 pt-6 w-full h-auto"
+            />
+          </div>
           <h2 className="text-2xl font-semibold text-center mb-6">
             Saint Augustine Veterinary Services - Delivered With Courtesy And
             Respect!

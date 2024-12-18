@@ -54,13 +54,15 @@ export function OurServicesComponent() {
       <h1 className="text-4xl font-bold text-center mb-6">Our Services</h1>
       <Card className="mb-8">
         <CardContent className="flex flex-col items-center p-6">
-          <Image
-            src="/our-services/title-photo.jpg"
-            alt="Our Services Title Photo"
-            width={800}
-            height={400}
-            className="rounded-lg shadow-lg mb-8"
-          />
+          <div className="w-full max-w-2xl mx-auto">
+            <Image
+              src="/our-services/title-photo.jpg"
+              alt="Our Services Title Photo"
+              width={800}
+              height={400}
+              className="rounded-lg shadow-lg mb-8 pt-6 w-full h-auto"
+            />
+          </div>
           <p className="text-lg mb-4">
             You work hard to ensure that your furry family member has the best
             possible life. That&apos;s why partnering with a locally owned
