@@ -37,8 +37,7 @@ const services = [
   {
     icon: Heart,
     title: "In-Clinic Laboratory",
-    description:
-      "Diagnostic blood work in-clinic for immediate results",
+    description: "Diagnostic blood work in-clinic for immediate results",
   },
   {
     icon: Calendar,
@@ -89,11 +88,48 @@ export function OurServicesComponent() {
           <h2 className="text-2xl font-semibold mb-4">Additional Services</h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>Microchipping</li>
+            <li>Bathing</li>
             <li>Nutritional Counseling</li>
-            <li>Parasite Prevention and Control</li>
-            <li>Laboratory Services</li>
-            <li>Radiology</li>
+            <li>
+              Soft tissue surgery with Complete Monitoring equipment to ensure
+              your pet&apos;s safety
+            </li>
+            <li>
+              Endocrine Disease Management: Thyroid disease, Cushing Disease,
+              Diabetes Mellitus
+            </li>
+            <li>Year-Round Parasite Prevention and Control</li>
+            <li>Daytime Hospitalization and fluid therapy</li>
+            <li>
+              Laboratory Services: Complete In house IDEXX Machines and
+              Reference Lab
+            </li>
+            <li>
+              HT VISTA- The first completely non-invasive cancer screening tool
+              that allows veterinary teams to rule out cancer of dermal and
+              subcutaneous masses on the spot
+            </li>
+            <li>Digital Radiology</li>
+            <li>Digital Dental Radiology</li>
+            <li>
+              Comprehensive Oral Health Assessment and Treatment (It&apos;s not
+              just your average dental!)
+            </li>
             <li>Behavioral Counseling</li>
+            <li>
+              ForceTriad- Electrosurgical System that provides electrosurgical
+              cutting and coagulation, monopolar and bipolar functionality, and
+              vessel sealing.
+            </li>
+            <li>
+              Phovia - fluorescent light energy to accelerate natural skin
+              regeneration
+            </li>
+            <li>Companion Therapy Laser- CTS DUO+ Class 4 laser</li>
+            <li>
+              Mobile Abdominal Ultrasounds and Echocardiograms with MOVES
+              Internal Medicine Specialist Dr. Kristen Parker
+            </li>
           </ul>
         </CardContent>
       </Card>
