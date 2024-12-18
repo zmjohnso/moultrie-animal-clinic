@@ -60,7 +60,7 @@ export function OurServicesComponent() {
               alt="Our Services Title Photo"
               width={800}
               height={400}
-              className="rounded-lg shadow-lg mb-8 pt-6 w-full h-auto"
+              className="rounded-lg shadow-lg mb-8 w-full h-auto"
             />
           </div>
           <p className="text-lg mb-4">
