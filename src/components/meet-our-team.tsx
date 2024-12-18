@@ -27,7 +27,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
               src={profilePhoto.url}
               alt={profilePhoto.title}
               fill
-              className="object-contain sm:object-cover"
+              className="object-contain sm:object-cover mt-2 sm:mt-0"
             />
           </div>
         </div>
@@ -70,16 +70,16 @@ export async function MeetOurTeamComponent() {
   const veterinarians = teamMembers.teamMembersCollection.items.filter(
     (x) => x.jobTitle.title === VETERINARIANS
   );
-  const officeManager = teamMembers.teamMembersCollection.items.find(
+  const officeManagers = teamMembers.teamMembersCollection.items.filter(
     (x) => x.jobTitle.title === OFFICE_MANAGER
   );
   const veterinaryTechnicians = teamMembers.teamMembersCollection.items.filter(
     (x) => x.jobTitle.title === VETERINARY_TECHNICIANS
   );
-  const receptionist = teamMembers.teamMembersCollection.items.find(
+  const receptionists = teamMembers.teamMembersCollection.items.filter(
     (x) => x.jobTitle.title === RECEPTIONIST
   );
-  const qualityControlManager = teamMembers.teamMembersCollection.items.find(
+  const qualityControlManagers = teamMembers.teamMembersCollection.items.filter(
     (x) => x.jobTitle.title === QUALITY_CONTROL_MANAGER
   );
 
@@ -112,17 +112,18 @@ export async function MeetOurTeamComponent() {
         ))}
       </div>
 
-      {officeManager && (
-        <>
-          <Section title={OFFICE_MANAGER} />
+      <Section title={OFFICE_MANAGER} />
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        {officeManagers.map((officeManager) => (
           <TeamMemberCard
+            key={officeManager.name}
             name={officeManager.name}
             role={officeManager.role}
             profilePhoto={officeManager.profilePhoto}
             description={officeManager.description}
           />
-        </>
-      )}
+        ))}
+      </div>
 
       <Section title={VETERINARY_TECHNICIANS} />
       <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
@@ -137,29 +138,31 @@ export async function MeetOurTeamComponent() {
         ))}
       </div>
 
-      {receptionist && (
-        <>
-          <Section title={RECEPTIONIST} />
+      <Section title={RECEPTIONIST} />
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        {receptionists.map((receptionist) => (
           <TeamMemberCard
+            key={receptionist.name}
             name={receptionist.name}
             role={receptionist.role}
             profilePhoto={receptionist.profilePhoto}
             description={receptionist.description}
           />
-        </>
-      )}
+        ))}
+      </div>
 
-      {qualityControlManager && (
-        <>
-          <Section title={QUALITY_CONTROL_MANAGER} />
+      <Section title={QUALITY_CONTROL_MANAGER} />
+      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+        {qualityControlManagers.map((qualityControlManager) => (
           <TeamMemberCard
+            key={qualityControlManager.name}
             name={qualityControlManager.name}
             role={qualityControlManager.role}
             profilePhoto={qualityControlManager.profilePhoto}
             description={qualityControlManager.description}
           />
-        </>
-      )}
+        ))}
+      </div>
     </div>
   );
 }

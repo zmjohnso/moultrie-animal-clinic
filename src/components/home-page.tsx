@@ -27,7 +27,7 @@ export function HomePageComponent() {
           className="mx-auto mb-8 w-full max-w-xl"
         />
         <p className="text-xl text-foreground">
-          Providing compassionate care for your furry family members since 1985
+          Family Owned and Providing Compassionate Care for Your Furry Family Members Since 1985!
         </p>
       </section>
 
@@ -170,7 +170,7 @@ export function HomePageComponent() {
                 <div className="flex items-center space-x-4">
                   <Star className="h-6 w-6" />
                   <Link
-                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
+                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"
