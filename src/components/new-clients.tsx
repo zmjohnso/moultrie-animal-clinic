@@ -9,7 +9,7 @@ export function NewClientsComponent() {
     <div className="container mx-auto px-4 py-8">
       <Card className="mb-8">
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-center">
+          <CardTitle className="text-4xl font-bold text-center">
             What To Expect
           </CardTitle>
         </CardHeader>
