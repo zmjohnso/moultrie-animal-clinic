@@ -11,7 +11,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
-import { HomePageMap } from "./home-page-map";
+import { GoogleMap } from "./google-map";
 
 export function HomePageComponent() {
   return (
@@ -185,7 +185,7 @@ export function HomePageComponent() {
               </div>
             </div>
             <div className="h-full">
-              <HomePageMap />
+              <GoogleMap />
             </div>
           </CardContent>
         </Card>

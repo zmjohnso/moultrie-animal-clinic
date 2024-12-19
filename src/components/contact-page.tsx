@@ -5,7 +5,7 @@ import FacebookColor from "/public/brand-icons/facebook-color.svg";
 import Google from "/public/brand-icons/google.svg";
 import Link from "next/link";
 import Image from "next/image";
-import { ContactPageMap } from "./contact-page-map";
+import { GoogleMap } from "./google-map";
 
 export function ContactPageComponent() {
   const hours = [
@@ -60,7 +60,7 @@ export function ContactPageComponent() {
               >
                 3450 US Hwy 1 S, Saint Augustine, FL 32086
               </Link>
-              <ContactPageMap />
+              <GoogleMap />
             </div>
           </div>
           <div className="flex items-start space-x-4">

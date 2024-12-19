@@ -2,12 +2,22 @@
 
 import { useState } from "react";
 import { MapPin } from "lucide-react";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
-export function ContactPageMap() {
+export function GoogleMap() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const isContactPage = pathname === "/contact";
 
   return (
-    <div className="mt-2 w-full h-64 md:h-80 lg:h-96 rounded-md overflow-hidden relative">
+    <div
+      className={clsx("w-full rounded-md overflow-hidden relative", {
+        "mt-2 h-64 md:h-80 lg:h-96": isContactPage,
+        "h-full min-h-[300px]": isHomePage,
+      })}
+    >
       {!isMapLoaded && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
           <span className="sr-only">Loading map...</span>
