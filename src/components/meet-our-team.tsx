@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getMeetOurTeamPageData } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import clsx from "clsx";
 
 interface TeamMemberCardProps {
   name: string;
@@ -100,10 +101,15 @@ export async function MeetOurTeamComponent() {
         {teamMembers.heading}
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 max-w-3xl mx-auto">
-        {gridPhotos.slice(0, 8).map((photo, index) => (
+        {gridPhotos.map((photo, index) => (
           <div
             key={index}
-            className="aspect-square relative overflow-hidden rounded-lg shadow-md"
+            className={clsx(
+              "aspect-square relative overflow-hidden rounded-lg shadow-md",
+              {
+                "hidden md:block": index >= 4,
+              }
+            )}
           >
             <Image
               src={photo.url}

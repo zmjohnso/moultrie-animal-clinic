@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { TakeATour } from "@/lib/types";
 import { ImageSkeleton } from "./image-skeleton";
+import clsx from "clsx";
 
 export function TakeATourComponent({
   takeATourPage,
@@ -53,9 +54,13 @@ export function TakeATourComponent({
               src={images[currentImage].url}
               alt={images[currentImage].title}
               fill
-              className={`object-contain transition-opacity duration-300 ${
-                isLoading ? "opacity-0" : "opacity-100"
-              }`}
+              className={clsx(
+                "object-contain transition-opacity duration-300",
+                {
+                  "opacity-0": isLoading,
+                  "opacity-100": !isLoading,
+                }
+              )}
               onLoadingComplete={() => setIsLoading(false)}
             />
           </div>

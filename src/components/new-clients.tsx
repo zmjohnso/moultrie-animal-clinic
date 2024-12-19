@@ -15,7 +15,7 @@ export function NewClientsComponent() {
               alt="New Clients Title Photo"
               width={800}
               height={400}
-              className="rounded-lg shadow-lg mb-8 pt-6 w-full h-auto"
+              className="rounded-lg shadow-lg mb-8 mt-6 w-full h-auto"
             />
           </div>
           <h2 className="text-2xl font-semibold text-center mb-6">
@@ -51,7 +51,7 @@ export function NewClientsComponent() {
             </p>
           </div>
           <div className="flex justify-center">
-            <Button asChild size="lg" className="text-lg py-6 px-8">
+            <Button asChild size="lg" className="text-lg py-6 px-8 mt-6">
               <Link href="/new-clients/registration-form">
                 New Client Registration Form
               </Link>
