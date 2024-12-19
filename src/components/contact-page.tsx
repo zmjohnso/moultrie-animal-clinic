@@ -16,7 +16,7 @@ export function ContactPageComponent() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Contact Us</h1>
+      <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
       <Card className="max-w-2xl mx-auto border shadow-sm">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Get in touch</CardTitle>

@@ -61,7 +61,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <AppHeaderComponent />
-        <main>{children}</main>
+        <main tabIndex={-1}>{children}</main>
         <Analytics />
         <SpeedInsights />
       </body>

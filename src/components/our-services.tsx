@@ -51,7 +51,7 @@ const services = [
 export function OurServicesComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-6">Our Services</h1>
+      <h2 className="text-4xl font-bold text-center mb-6">Our Services</h2>
       <Card className="mb-8">
         <CardContent className="flex flex-col items-center p-6">
           <div className="w-full max-w-2xl mx-auto">

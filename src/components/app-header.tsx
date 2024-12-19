@@ -18,7 +18,7 @@ const navItems = [
 
 export function AppHeaderComponent() {
   return (
-    <header className="border-b bg-white shadow-sm">
+    <header className="border-b bg-white shadow-sm" tabIndex={-1}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
