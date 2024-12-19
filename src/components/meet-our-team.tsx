@@ -2,6 +2,14 @@ import Image from "next/image";
 import { getMeetOurTeamPageData } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import clsx from "clsx";
+import Kramer from "../../public/meet-our-team/kramer.jpg";
+import DogBack from "../../public/meet-our-team/dog-back.jpg";
+import DogBW from "../../public/meet-our-team/dog-bw.jpg";
+import DogLickCat from "../../public/meet-our-team/dog-lick-cat.jpg";
+import DogSwimming from "../../public/meet-our-team/dog-swimming.jpg";
+import LunaSpring from "../../public/meet-our-team/luna-spring.jpg";
+import Sadie from "../../public/meet-our-team/sadie.jpg";
+import TreatyOak from "../../public/meet-our-team/treaty-oak.jpg";
 
 interface TeamMemberCardProps {
   name: string;
@@ -85,14 +93,14 @@ export async function MeetOurTeamComponent() {
   );
 
   const gridPhotos = [
-    { title: "Kramer", url: "/meet-our-team/kramer.jpg" },
-    { title: "Dog Butt", url: "/meet-our-team/dog_butt.jpg" },
-    { title: "Dog BW photo", url: "/meet-our-team/dog-bw.jpg" },
-    { title: "Dog licking cat", url: "/meet-our-team/dog-lick-cat.jpg" },
-    { title: "Dog swimming", url: "/meet-our-team/dog-swimming.jpg" },
-    { title: "Luna", url: "/meet-our-team/luna-spring.jpg" },
-    { title: "Sadie", url: "/meet-our-team/sadie.jpg" },
-    { title: "Treaty Oak", url: "/meet-our-team/treaty-oak.jpg" },
+    { title: "Kramer", url: Kramer },
+    { title: "Dog Back", url: DogBack },
+    { title: "Dog BW photo", url: DogBW },
+    { title: "Dog licking cat", url: DogLickCat },
+    { title: "Dog swimming", url: DogSwimming },
+    { title: "Luna", url: LunaSpring },
+    { title: "Sadie", url: Sadie },
+    { title: "Treaty Oak", url: TreatyOak },
   ];
 
   return (
@@ -117,6 +125,8 @@ export async function MeetOurTeamComponent() {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 30vw, 15vw"
+              priority
+              placeholder="blur"
             />
           </div>
         ))}

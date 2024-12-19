@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Testimonials } from "./testimonials";
+import TitlePhoto from "../../public/new-clients/title-photo.jpg";
 
 export function NewClientsComponent() {
   return (
@@ -11,11 +12,13 @@ export function NewClientsComponent() {
         <CardContent className="flex flex-col items-center">
           <div className="w-full max-w-2xl mx-auto">
             <Image
-              src="/new-clients/title-photo.jpg"
+              src={TitlePhoto}
               alt="New Clients Title Photo"
               width={800}
               height={400}
               className="rounded-lg shadow-lg mb-8 mt-6 w-full h-auto"
+              priority
+              placeholder="blur"
             />
           </div>
           <h2 className="text-2xl font-semibold text-center mb-6">

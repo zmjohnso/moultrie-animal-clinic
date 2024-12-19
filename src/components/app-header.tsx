@@ -3,6 +3,7 @@ import Link from "next/link";
 import Facebook from "/public/brand-icons/facebook.svg";
 import { Phone } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
+import Logo from "../../src/app/icon.jpg";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -25,11 +26,13 @@ export function AppHeaderComponent() {
           <div className="flex-shrink-0">
             <Link href="/" className="block">
               <Image
-                src="/icon.jpg"
+                src={Logo}
                 alt="Moultrie Animal Clinic Logo"
                 width={200}
                 height={67}
                 className="h-16 w-auto"
+                placeholder="blur"
+                priority
               />
             </Link>
           </div>

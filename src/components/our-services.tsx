@@ -9,6 +9,7 @@ import {
   Heart,
   Calendar,
 } from "lucide-react";
+import TitlePhoto from "../../public/our-services/title-photo.jpg";
 
 const services = [
   {
@@ -56,11 +57,13 @@ export function OurServicesComponent() {
         <CardContent className="flex flex-col items-center p-6">
           <div className="w-full max-w-2xl mx-auto">
             <Image
-              src="/our-services/title-photo.jpg"
+              src={TitlePhoto}
               alt="Our Services Title Photo"
               width={800}
               height={400}
               className="rounded-lg shadow-lg mb-8 w-full h-auto"
+              priority
+              placeholder="blur"
             />
           </div>
           <p className="text-lg mb-4">

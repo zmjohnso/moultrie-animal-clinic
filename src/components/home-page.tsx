@@ -12,14 +12,18 @@ import {
   Star,
 } from "lucide-react";
 import { GoogleMap } from "./google-map";
+import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
+import TeamPhoto from "../../public/home/team.jpg";
 
 export function HomePageComponent() {
   return (
     <div className="container mx-auto px-4 py-8">
       <section className="text-center mb-12">
         <Image
-          src="/home/moultrie-logo-color.jpg"
+          src={MoultrieLogo}
           alt="Moultrie Animal Clinic Logo"
+          priority
+          placeholder="blur"
           width={400}
           height={134}
           className="mx-auto mb-8 w-full max-w-xl"
@@ -51,8 +55,9 @@ export function HomePageComponent() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src="/home/team.jpg"
+                src={TeamPhoto}
                 alt="Moultrie Animal Clinic Team"
+                placeholder="blur"
                 width={400}
                 height={300}
                 className="rounded-lg shadow-lg"
