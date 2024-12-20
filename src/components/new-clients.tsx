@@ -14,8 +14,6 @@ export function NewClientsComponent() {
             <Image
               src={TitlePhoto}
               alt="New Clients Title Photo"
-              width={800}
-              height={400}
               className="rounded-lg shadow-lg mb-8 mt-6 w-full h-auto"
               priority
               placeholder="blur"

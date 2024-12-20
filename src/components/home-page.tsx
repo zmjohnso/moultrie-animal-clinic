@@ -24,8 +24,6 @@ export function HomePageComponent() {
           alt="Moultrie Animal Clinic Logo"
           priority
           placeholder="blur"
-          width={400}
-          height={134}
           className="mx-auto mb-8 w-full max-w-xl"
         />
         <p className="text-xl text-foreground">
@@ -43,11 +41,11 @@ export function HomePageComponent() {
               </h2>
               <p className="mb-4">
                 At Moultrie Animal Clinic, we understand that your pets are more
-                than just animals – they&apos;re family. As a family-owned
-                business, our team of experienced veterinarians and staff are
-                dedicated to providing the highest quality care for your beloved
-                companions with the personal touch that only a family practice
-                can offer.
+                than just animals - they&apos;re family. Our team of experienced
+                veterinarians and staff are dedicated to providing the highest
+                quality care for your beloved companions. We strive to provide a
+                personal touch that only a locally owned and family run practice
+                can proudly offer.
               </p>
               <Button asChild>
                 <Link href="/meet-our-team">Meet Our Team</Link>
@@ -58,8 +56,6 @@ export function HomePageComponent() {
                 src={TeamPhoto}
                 alt="Moultrie Animal Clinic Team"
                 placeholder="blur"
-                width={400}
-                height={300}
                 className="rounded-lg shadow-lg"
               />
             </div>

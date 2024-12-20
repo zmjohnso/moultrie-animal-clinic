@@ -28,8 +28,6 @@ export function AppHeaderComponent() {
               <Image
                 src={Logo}
                 alt="Moultrie Animal Clinic Logo"
-                width={200}
-                height={67}
                 className="h-16 w-auto"
                 placeholder="blur"
                 priority
