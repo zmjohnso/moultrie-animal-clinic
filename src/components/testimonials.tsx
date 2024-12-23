@@ -1,5 +1,4 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
 
 interface TestimonialProps {
   review: string;
@@ -10,11 +9,6 @@ const Testimonial: React.FC<TestimonialProps> = ({ review, author }) => (
   <Card className="h-full">
     <CardContent className="p-6 flex flex-col justify-between h-full">
       <div>
-        <div className="flex mb-2">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-          ))}
-        </div>
         <p className="text-sm mb-4">{review}</p>
       </div>
       <p className="text-sm font-semibold">{author}</p>
@@ -26,13 +20,13 @@ export function Testimonials() {
   const testimonials = [
     {
       review:
-        "The staff at this veterinary clinic are amazing! They treated my dog with such care and compassion. I couldn't be happier with the service.",
-      author: "John D.",
+        "I can't say enough wonderful things about Dr Bendick and her staff at Moultrie Animal Clinic. We have been clients of Dr Bendick for many years. We followed her from Atlantic Beach where she used to work to St Augustine when she took ownership of Moultrie Animal Clinic. Dr Bendick is amazing, very knowledgeable about new treatments and drugs and keeps up to date with the latest information. She is always so professional as is her staff. The staff (techs and office personnel) are great and work well together as a team. We are very happy with the care that our three dogs receive and wouldn't go anywhere else.",
+      author: "Heidi O.",
     },
     {
       review:
-        "I've been bringing my cats here for years. The doctors are knowledgeable and always take the time to explain everything thoroughly.",
-      author: "Sarah M.",
+        `Dr. Bendick and her awesome staff always go above and beyond, always ready to step in help whatever the circumstances. We travel over 45 minutes each way to visit this clinic just so Dr. Bendick can take care of my girls "Daisy and Missy." The clinic is always accommodating even when calling last minute with a problem. Highly recommend Dr. Bendick and her awesome staff.`,
+      author: "Tina B. and her furbabies Daisy & Missy",
     },
     {
       review:
