@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-export function GoogleMap() {
+export function GoogleMapComponent() {
   const [isMapLoaded, setIsMapLoaded] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";

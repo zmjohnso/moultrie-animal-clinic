@@ -36,7 +36,7 @@ describe("AppHeaderComponent", () => {
       name: "Contact Us",
     });
     const phoneNumber = screen.getByRole("link", {
-      name: "+1 (904) 794-7170",
+      name: "+1 (904) 797-5601",
     });
 
     expect(moultrieLogo).toBeInTheDocument();

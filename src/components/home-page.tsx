@@ -11,7 +11,7 @@ import {
   Clock,
   Star,
 } from "lucide-react";
-import { GoogleMap } from "./google-map";
+import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
 import TeamPhoto from "../../public/home/team.jpg";
 
@@ -186,7 +186,7 @@ export function HomePageComponent() {
               </div>
             </div>
             <div className="h-full">
-              <GoogleMap />
+              <GoogleMapComponent />
             </div>
           </CardContent>
         </Card>
