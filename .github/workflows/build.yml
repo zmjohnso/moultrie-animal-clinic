@@ -1,5 +1,8 @@
 name: Build
 
+env:
+  NEXT_PUBLIC_FORMSPREE_NEW_CLIENT_REGISTRATION_FORM: ${{ secrets.NEXT_PUBLIC_FORMSPREE_NEW_CLIENT_REGISTRATION_FORM }}
+
 on:
   # Run the build for pushes and pull requests targeting main
   push:
