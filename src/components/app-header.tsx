@@ -11,7 +11,6 @@ const navItems = [
   { href: "/our-services", label: "Our Services" },
   { href: "/take-a-tour", label: "Take a Tour" },
   { href: "/new-clients", label: "New Clients" },
-  { href: "/contact", label: "Contact Us" },
   {
     href: "https://moultrieanimalclinic.securevetsource.com/site/view/site/view/HomeDelivery.pml?retUrl=https://moultrieanimalclinic.com/&cmsTitle=MOULTRIE%20ANIMAL%20CLINIC",
     label: "Online Pharmacy",
