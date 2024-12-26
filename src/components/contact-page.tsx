@@ -24,10 +24,7 @@ export function ContactPageComponent() {
         <CardContent className="grid gap-4">
           <div className="flex items-center space-x-4">
             <Phone className="h-5 w-5 text-gray-500" />
-            <Link
-              href="tel:+19047975601"
-              className="text-blue-600 hover:underline"
-            >
+            <Link href="tel:+19047975601" className="hover:underline">
               +1 (904) 797-5601
             </Link>
           </div>
@@ -35,17 +32,14 @@ export function ContactPageComponent() {
             <Mail className="h-5 w-5 text-gray-500" />
             <Link
               href="mailto:moultrieanimalclinic@gmail.com"
-              className="text-blue-600 hover:underline"
+              className="hover:underline"
             >
               moultrieanimalclinic@gmail.com
             </Link>
           </div>
           <div className="flex items-center space-x-4">
             <Printer className="h-5 w-5 text-gray-500" />
-            <Link
-              href="tel:+19047947170"
-              className="text-blue-600 hover:underline"
-            >
+            <Link href="tel:+19047947170" className="hover:underline">
               +1 (904) 794-7170
             </Link>
           </div>
@@ -56,7 +50,7 @@ export function ContactPageComponent() {
                 href="https://www.google.com/maps/search/?api=1&query=3450+US+Hwy+1+S,+Saint+Augustine,+FL+32086"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
+                className="hover:underline"
               >
                 3450 US Hwy 1 S, Saint Augustine, FL 32086
               </Link>

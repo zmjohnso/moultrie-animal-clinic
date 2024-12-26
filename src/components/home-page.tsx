@@ -10,6 +10,7 @@ import {
   MapPin,
   Clock,
   Star,
+  Mail,
 } from "lucide-react";
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
@@ -131,6 +132,15 @@ export function HomePageComponent() {
                     className="text-lg hover:underline"
                   >
                     +1 (904) 797-5601
+                  </Link>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Mail className="h-6 w-6" />
+                  <Link
+                    href="mailto:moultrieanimalclinic@gmail.com"
+                    className="text-lg hover:underline"
+                  >
+                    moultrieanimalclinic@gmail.com
                   </Link>
                 </div>
                 <div className="flex items-start space-x-4">
