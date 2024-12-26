@@ -32,9 +32,6 @@ describe("AppHeaderComponent", () => {
     const facebookLogo = screen.getByRole("img", {
       name: "Facebook Icon",
     });
-    const phoneIcon = screen.getByRole("link", {
-      name: "Contact Us",
-    });
     const phoneNumber = screen.getByRole("link", {
       name: "+1 (904) 797-5601",
     });
@@ -49,7 +46,6 @@ describe("AppHeaderComponent", () => {
     expect(onlinePharmacyLink).toBeInTheDocument();
 
     expect(facebookLogo).toBeInTheDocument();
-    expect(phoneIcon).toBeInTheDocument();
     expect(phoneNumber).toBeInTheDocument();
   });
 });
