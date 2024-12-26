@@ -11,6 +11,7 @@ const navItems = [
   { href: "/our-services", label: "Our Services" },
   { href: "/take-a-tour", label: "Take a Tour" },
   { href: "/new-clients", label: "New Clients" },
+  { href: "/contact", label: "Contact Us" },
   {
     href: "https://moultrieanimalclinic.securevetsource.com/site/view/site/view/HomeDelivery.pml?retUrl=https://moultrieanimalclinic.com/&cmsTitle=MOULTRIE%20ANIMAL%20CLINIC",
     label: "Online Pharmacy",
@@ -36,7 +37,7 @@ export function AppHeaderComponent() {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <nav className="hidden lg:flex space-x-1">
+          <nav className="hidden xl:flex ml-36 space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -48,7 +49,7 @@ export function AppHeaderComponent() {
             ))}
           </nav>
 
-          {/* Social Links, Phone, and Phone Number */}
+          {/* Social Links */}
           <div className="flex flex-col items-center">
             <div className="flex items-center space-x-4">
               <Link
@@ -78,10 +79,16 @@ export function AppHeaderComponent() {
             >
               +1 (904) 797-5601
             </a>
+            <a
+              href="mailto:moultrieanimalclinic@gmail.com"
+              className="mt-1 text-sm font-medium text-gray-900 transition duration-150 ease-in-out"
+            >
+              moultrieanimalclinic@gmail.com
+            </a>
           </div>
 
           {/* Mobile Menu */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <MobileMenu navItems={navItems} />
           </div>
         </div>
