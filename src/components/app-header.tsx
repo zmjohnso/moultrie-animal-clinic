@@ -3,7 +3,7 @@ import Link from "next/link";
 import Facebook from "/public/brand-icons/facebook.svg";
 import { Phone } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
-import Logo from "../../src/app/icon.jpg";
+import Logo from "../../src/app/icon.png";
 
 const navItems = [
   { href: "/", label: "Home" },
