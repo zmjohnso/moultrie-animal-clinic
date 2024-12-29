@@ -33,7 +33,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # Install
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
       # Checks
       - name: Lint
         run: npm run lint
