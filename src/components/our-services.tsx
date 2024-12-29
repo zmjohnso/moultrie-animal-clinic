@@ -58,7 +58,7 @@ export function OurServicesComponent() {
           <div className="w-full max-w-2xl mx-auto">
             <Image
               src={TitlePhoto}
-              alt="Our Services Title Photo"
+              alt="Dog smiling at the camera."
               className="rounded-lg shadow-lg mb-8 w-full h-auto"
               priority
               placeholder="blur"

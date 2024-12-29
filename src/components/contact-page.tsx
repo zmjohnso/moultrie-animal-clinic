@@ -80,7 +80,7 @@ export function ContactPageComponent() {
               >
                 <Image
                   src={FacebookColor}
-                  alt="Facebook Icon"
+                  alt="Visit the Moultrie Animal Clinic Facebook."
                   width={24}
                   height={24}
                 />
@@ -92,7 +92,7 @@ export function ContactPageComponent() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={Google} alt="Google Icon" width={24} height={24} />
+                <Image src={Google} alt="Visit the Moultrie Animial Clinic Google search entry." width={24} height={24} />
               </Link>
             </Button>
           </div>

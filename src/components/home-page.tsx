@@ -14,8 +14,6 @@ import {
 } from "lucide-react";
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
-import TeamPhoto from "../../public/home/team.jpg";
-import DogRunning from "../../public/home/dog-running.jpg";
 import DogLickingCat from "../../public/meet-our-team/dog-lick-cat.jpg";
 
 export function HomePageComponent() {
@@ -24,7 +22,7 @@ export function HomePageComponent() {
       <section className="text-center mb-12">
         <Image
           src={MoultrieLogo}
-          alt="Moultrie Animal Clinic Logo"
+          alt="Full Moultrie Animal Clinic logo with lighthouse and clinic name."
           priority
           placeholder="blur"
           className="mx-auto mb-8 w-full max-w-xl"
@@ -57,7 +55,7 @@ export function HomePageComponent() {
             <div className="md:w-1/2">
               <Image
                 src={DogLickingCat}
-                alt="Moultrie Animal Clinic Team"
+                alt="Dog licking a cat."
                 placeholder="blur"
                 className="rounded-lg shadow-lg"
               />

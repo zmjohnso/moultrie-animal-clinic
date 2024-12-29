@@ -27,7 +27,7 @@ export function AppHeaderComponent() {
             <Link href="/" className="block">
               <Image
                 src={Logo}
-                alt="Moultrie Animal Clinic Logo"
+                alt="Small Moultrie Animal Clinic dog and cat logo."
                 className="h-16 w-auto"
                 placeholder="blur"
                 priority
@@ -66,7 +66,7 @@ export function AppHeaderComponent() {
               >
                 <Image
                   src={Facebook}
-                  alt="Facebook Icon"
+                  alt="Visit the Moultrie Animal Clinic Facebook."
                   width={20}
                   height={20}
                 />
