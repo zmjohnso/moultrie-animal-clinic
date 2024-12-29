@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import Facebook from "/public/brand-icons/facebook.svg";
+import Facebook from "../../public/brand-icons/facebook.svg";
 import { Phone } from "lucide-react";
 import { MobileMenu } from "./mobile-menu";
-import Logo from "../../src/app/icon.png";
+import Logo from "../app/icon.png";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -29,7 +29,6 @@ export function AppHeaderComponent() {
                 src={Logo}
                 alt="Small Moultrie Animal Clinic dog and cat logo."
                 className="h-16 w-auto"
-                placeholder="blur"
                 priority
               />
             </Link>

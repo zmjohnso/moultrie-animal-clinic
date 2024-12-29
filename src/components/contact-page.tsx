@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Printer, MapPin, Clock } from "lucide-react";
-import FacebookColor from "/public/brand-icons/facebook-color.svg";
-import Google from "/public/brand-icons/google.svg";
+import FacebookColor from "../../public/brand-icons/facebook-color.svg";
+import Google from "../../public/brand-icons/google.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleMapComponent } from "./google-map";
@@ -92,7 +92,12 @@ export function ContactPageComponent() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={Google} alt="Visit the Moultrie Animial Clinic Google search entry." width={24} height={24} />
+                <Image
+                  src={Google}
+                  alt="Visit the Moultrie Animial Clinic Google search entry."
+                  width={24}
+                  height={24}
+                />
               </Link>
             </Button>
           </div>
