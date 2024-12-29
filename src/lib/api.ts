@@ -1,5 +1,7 @@
 import "server-only";
 import {
+  JobType,
+  JobTypeResponse,
   MeetOurTeam,
   MeetOurTeamResponse,
   TakeATour,
@@ -51,6 +53,16 @@ const TAKE_A_TOUR_PAGE_QUERY = `
   }
 `;
 
+const JOB_TYPE_QUERY = `
+  query {
+    jobTypeCollection {
+      items {
+        title
+      }
+    }
+  }
+`;
+
 async function fetchGraphQL<T>(query: string): Promise<T> {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT_ID}`,
@@ -78,4 +90,9 @@ export async function getMeetOurTeamPageData(): Promise<MeetOurTeam> {
 export async function getTakeATourPageData(): Promise<TakeATour> {
   const data = await fetchGraphQL<TakeATourResponse>(TAKE_A_TOUR_PAGE_QUERY);
   return data?.data?.takeATourCollection?.items[0];
+}
+
+export async function getJobTypes(): Promise<JobType[]> {
+  const data = await fetchGraphQL<JobTypeResponse>(JOB_TYPE_QUERY);
+  return data?.data?.jobTypeCollection.items;
 }

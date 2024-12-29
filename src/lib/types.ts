@@ -1,5 +1,5 @@
 export interface Photo {
-  title: string;
+  description: string;
   url: string;
 }
 
@@ -52,5 +52,19 @@ export interface TakeATourCollection {
 export interface TakeATourResponse {
   data: {
     takeATourCollection: TakeATourCollection;
+  };
+}
+
+export interface JobType {
+  title: string;
+}
+
+export interface JobTypeCollection {
+  items: JobType[];
+}
+
+export interface JobTypeResponse {
+  data: {
+    jobTypeCollection: JobTypeCollection;
   };
 }

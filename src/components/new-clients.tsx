@@ -25,7 +25,7 @@ export function NewClientsComponent() {
           </h2>
           <div className="space-y-4 text-base sm:text-lg">
             <p>
-              We&apos;re all animal lovers here! Our team works hard to create a
+              We are all animal lovers here! Our team works hard to create a
               warm, inviting and comfortable environment for you and your pet.
               We strive for individualized care where you and your pet are never
               just a number, but part of our family. Our Veterinarians are

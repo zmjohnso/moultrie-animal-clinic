@@ -66,7 +66,7 @@ export function OurServicesComponent() {
           </div>
           <p className="text-lg mb-4">
             You work hard to ensure that your furry family member has the best
-            possible life. That&apos;s why partnering with a locally owned
+            possible life. That is why partnering with a locally owned
             veterinary team who genuinely cares is so important.
           </p>
           <p className="text-lg">
@@ -123,8 +123,8 @@ export function OurServicesComponent() {
             <li>Digital Radiology</li>
             <li>Digital Dental Radiology</li>
             <li>
-              Comprehensive Oral Health Assessment and Treatment (It&apos;s not
-              just your average dental!)
+              Comprehensive Oral Health Assessment and Treatment (It is not just
+              your average dental!)
             </li>
             <li>Behavioral Counseling</li>
             <li>

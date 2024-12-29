@@ -52,7 +52,7 @@ export function TakeATourComponent({
             {isLoading && <ImageSkeleton />}
             <Image
               src={images[currentImage].url}
-              alt={images[currentImage].title}
+              alt={images[currentImage].description}
               fill
               className={clsx(
                 "object-contain transition-opacity duration-300",
@@ -88,7 +88,7 @@ export function TakeATourComponent({
       </div>
 
       <div className="text-center mb-8">
-        <p className="font-semibold">{images[currentImage].title}</p>
+        <p className="font-semibold">{images[currentImage].description}</p>
         <p className="text-sm text-foreground">
           Image {isLoading ? "..." : `${currentImage + 1} of ${images.length}`}
         </p>

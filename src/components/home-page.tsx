@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
-import DogLickingCat from "../../public/meet-our-team/dog-lick-cat.jpg";
+import DogLickingCat from "../../public/home/dog-lick-cat.jpg";
 
 export function HomePageComponent() {
   return (

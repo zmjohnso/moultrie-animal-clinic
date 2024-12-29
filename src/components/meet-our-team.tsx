@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { getMeetOurTeamPageData } from "@/lib/api";
+import Image, { StaticImageData } from "next/image";
+import { getJobTypes, getMeetOurTeamPageData } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import clsx from "clsx";
 import Kramer from "../../public/meet-our-team/kramer.jpg";
 import DogBack from "../../public/meet-our-team/dog-back.jpg";
 import DogBW from "../../public/meet-our-team/dog-bw.jpg";
-import DogLickCat from "../../public/meet-our-team/dog-lick-cat.jpg";
+import CatPlayingWithDog from "../../public/meet-our-team/cat-playing-with-dog.jpg";
 import DogSwimming from "../../public/meet-our-team/dog-swimming.jpg";
 import LunaSpring from "../../public/meet-our-team/luna-spring.jpg";
 import Sadie from "../../public/meet-our-team/sadie.jpg";
@@ -15,7 +15,7 @@ interface TeamMemberCardProps {
   name: string;
   role: string;
   profilePhoto: {
-    title: string;
+    description: string;
     url: string;
   };
   description: string;
@@ -34,7 +34,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
           <div className="aspect-[4/3] sm:aspect-[3/4]">
             <Image
               src={profilePhoto.url}
-              alt={profilePhoto.title}
+              alt={profilePhoto.description}
               fill
               className="object-contain sm:object-cover mt-2 sm:mt-0"
             />
@@ -67,40 +67,40 @@ const Section: React.FC<SectionProps> = ({ title }) => {
   );
 };
 
+interface GridPhotos {
+  alt: string;
+  url: StaticImageData;
+}
+
 export async function MeetOurTeamComponent() {
   const teamMembers = await getMeetOurTeamPageData();
+  const jobTypes = await getJobTypes();
 
-  const VETERINARIANS = "Veterinarians";
-  const OFFICE_MANAGER = "Office Manager";
-  const VETERINARY_TECHNICIANS = "Veterinary Technicians";
-  const RECEPTIONIST = "Receptionist";
-  const QUALITY_CONTROL_MANAGER = "Quality Control Manager";
+  const groupedTeamMembers = jobTypes.map((jobType) => ({
+    title: jobType.title,
+    members: teamMembers.teamMembersCollection.items.filter(
+      (x) => x.jobTitle.title === jobType.title
+    ),
+  }));
 
-  const veterinarians = teamMembers.teamMembersCollection.items.filter(
-    (x) => x.jobTitle.title === VETERINARIANS
-  );
-  const officeManagers = teamMembers.teamMembersCollection.items.filter(
-    (x) => x.jobTitle.title === OFFICE_MANAGER
-  );
-  const veterinaryTechnicians = teamMembers.teamMembersCollection.items.filter(
-    (x) => x.jobTitle.title === VETERINARY_TECHNICIANS
-  );
-  const receptionists = teamMembers.teamMembersCollection.items.filter(
-    (x) => x.jobTitle.title === RECEPTIONIST
-  );
-  const qualityControlManagers = teamMembers.teamMembersCollection.items.filter(
-    (x) => x.jobTitle.title === QUALITY_CONTROL_MANAGER
-  );
-
-  const gridPhotos = [
-    { title: "Kramer", url: Kramer },
-    { title: "Dog Back", url: DogBack },
-    { title: "Dog BW photo", url: DogBW },
-    { title: "Dog licking cat", url: DogLickCat },
-    { title: "Dog swimming", url: DogSwimming },
-    { title: "Luna", url: LunaSpring },
-    { title: "Sadie", url: Sadie },
-    { title: "Treaty Oak", url: TreatyOak },
+  const gridPhotos: GridPhotos[] = [
+    { alt: "Dog looking to the right.", url: Kramer },
+    {
+      alt: "Dog laying on the ground looking back over his left shoulder.",
+      url: DogBack,
+    },
+    {
+      alt: "Black and white picture of a dog laying down looking forward with his tongue stuck out.",
+      url: DogBW,
+    },
+    { alt: "Cat playing with dog.", url: CatPlayingWithDog },
+    { alt: "Black dog swimming.", url: DogSwimming },
+    { alt: "Dog laying down in a bed of grass and flowers.", url: LunaSpring },
+    { alt: "Dog smiling and looking at the camera.", url: Sadie },
+    {
+      alt: "Dog smiling and resting her head on a tree branch.",
+      url: TreatyOak,
+    },
   ];
 
   return (
@@ -121,7 +121,7 @@ export async function MeetOurTeamComponent() {
           >
             <Image
               src={photo.url}
-              alt={photo.title}
+              alt={photo.alt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 30vw, 15vw"
@@ -132,70 +132,24 @@ export async function MeetOurTeamComponent() {
         ))}
       </div>
 
-      <Section title={VETERINARIANS} />
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        {veterinarians.map((vet) => (
-          <TeamMemberCard
-            key={vet.name}
-            name={vet.name}
-            role={vet.role}
-            profilePhoto={vet.profilePhoto}
-            description={vet.description}
+      {groupedTeamMembers.map((group) => (
+        <div key={group.title}>
+          <Section
+            title={group.members.length > 1 ? `${group.title}s` : group.title}
           />
-        ))}
-      </div>
-
-      <Section title={OFFICE_MANAGER} />
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        {officeManagers.map((officeManager) => (
-          <TeamMemberCard
-            key={officeManager.name}
-            name={officeManager.name}
-            role={officeManager.role}
-            profilePhoto={officeManager.profilePhoto}
-            description={officeManager.description}
-          />
-        ))}
-      </div>
-
-      <Section title={VETERINARY_TECHNICIANS} />
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        {veterinaryTechnicians.map((vetTech) => (
-          <TeamMemberCard
-            key={vetTech.name}
-            name={vetTech.name}
-            role={vetTech.role}
-            profilePhoto={vetTech.profilePhoto}
-            description={vetTech.description}
-          />
-        ))}
-      </div>
-
-      <Section title={RECEPTIONIST} />
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        {receptionists.map((receptionist) => (
-          <TeamMemberCard
-            key={receptionist.name}
-            name={receptionist.name}
-            role={receptionist.role}
-            profilePhoto={receptionist.profilePhoto}
-            description={receptionist.description}
-          />
-        ))}
-      </div>
-
-      <Section title={QUALITY_CONTROL_MANAGER} />
-      <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
-        {qualityControlManagers.map((qualityControlManager) => (
-          <TeamMemberCard
-            key={qualityControlManager.name}
-            name={qualityControlManager.name}
-            role={qualityControlManager.role}
-            profilePhoto={qualityControlManager.profilePhoto}
-            description={qualityControlManager.description}
-          />
-        ))}
-      </div>
+          <div className="grid gap-4 sm:grid-cols-1 md:grid-cols-2">
+            {group.members.map((member) => (
+              <TeamMemberCard
+                key={member.name}
+                name={member.name}
+                role={member.role}
+                profilePhoto={member.profilePhoto}
+                description={member.description}
+              />
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
