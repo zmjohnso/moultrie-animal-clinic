@@ -15,6 +15,8 @@ import {
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
 import TeamPhoto from "../../public/home/team.jpg";
+import DogRunning from "../../public/home/dog-running.jpg";
+import DogLickingCat from "../../public/meet-our-team/dog-lick-cat.jpg";
 
 export function HomePageComponent() {
   return (
@@ -42,7 +44,7 @@ export function HomePageComponent() {
               </h2>
               <p className="mb-4">
                 At Moultrie Animal Clinic, we understand that your pets are more
-                than just animals - they&apos;re family. Our team of experienced
+                than just animals - they are family. Our team of experienced
                 veterinarians and staff are dedicated to providing the highest
                 quality care for your beloved companions. We strive to provide a
                 personal touch that only a locally owned and family run practice
@@ -54,7 +56,7 @@ export function HomePageComponent() {
             </div>
             <div className="md:w-1/2">
               <Image
-                src={TeamPhoto}
+                src={DogLickingCat}
                 alt="Moultrie Animal Clinic Team"
                 placeholder="blur"
                 className="rounded-lg shadow-lg"
@@ -65,9 +67,11 @@ export function HomePageComponent() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-semibold mb-6 text-center">
-          Our Services
-        </h2>
+        <Link href="/our-services">
+          <h2 className="text-3xl font-semibold mb-6 text-center">
+            Our Services
+          </h2>
+        </Link>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
@@ -121,8 +125,8 @@ export function HomePageComponent() {
           <CardContent className="grid gap-6 md:grid-cols-2">
             <div className="space-y-6">
               <p className="text-lg">
-                Have questions or need to schedule an appointment? We&apos;re
-                here to help!
+                Have questions or need to schedule an appointment? We are here
+                to help!
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
