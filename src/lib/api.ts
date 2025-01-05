@@ -46,6 +46,7 @@ const TAKE_A_TOUR_PAGE_QUERY = `
         clinicPhotosCollection {
           items {
             title
+            description
             url
           }
         }
