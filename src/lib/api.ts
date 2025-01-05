@@ -23,13 +23,14 @@ const MEET_OUR_TEAM_PAGE_QUERY = `
                 role
                 profilePhoto {
                     title
+                    description
                     url
                 }
                 description
                 jobTitle {
                     title
                 }
-                }
+              }
             }
             }
         }

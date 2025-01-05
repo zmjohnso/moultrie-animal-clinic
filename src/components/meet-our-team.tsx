@@ -14,11 +14,11 @@ import TreatyOak from "../../public/meet-our-team/treaty-oak.jpg";
 interface TeamMemberCardProps {
   name: string;
   role: string;
-  profilePhoto: {
-    description: string;
-    url: string;
-  };
   description: string;
+  profilePhoto: {
+    url: string;
+    description: string;
+  };
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
