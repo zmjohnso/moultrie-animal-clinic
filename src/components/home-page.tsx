@@ -28,8 +28,8 @@ export function HomePageComponent() {
           className="mx-auto mb-8 w-full max-w-xl"
         />
         <p className="text-xl text-foreground">
-          Family Owned and Providing Compassionate Care for Your Furry Family
-          Members Since 1985!
+          Family Owned - Providing Compassionate Care for Your Furry Family
+          Members Since 1985
         </p>
       </section>
 
@@ -159,10 +159,10 @@ export function HomePageComponent() {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
-                  <Clock className="h-6 w-6 mt-1" />
+                  <Clock className="h-6 w-6 mt-1 flex-shrink-0" />
                   <div className="flex flex-col w-full">
                     <h3 className="font-semibold mb-2">Hours of Operation</h3>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {[
                         {
                           days: "Mon, Tue, Thu, Fri",
@@ -171,9 +171,14 @@ export function HomePageComponent() {
                         { days: "Wed", time: "7:00 AM - 3:00 PM" },
                         { days: "Sat, Sun", time: "Closed" },
                       ].map((item, index) => (
-                        <li key={index} className="flex justify-between">
-                          <span className="font-medium">{item.days}</span>
-                          <span>{item.time}</span>
+                        <li
+                          key={index}
+                          className="flex flex-col sm:flex-row sm:justify-between"
+                        >
+                          <span className="font-medium sm:inline">
+                            {item.days}
+                          </span>
+                          <span className="whitespace-nowrap">{item.time}</span>
                         </li>
                       ))}
                     </ul>
