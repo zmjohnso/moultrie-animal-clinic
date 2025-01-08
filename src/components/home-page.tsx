@@ -15,6 +15,7 @@ import {
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
 import DogLickingCat from "../../public/home/dog-lick-cat.jpg";
+import { CLINIC_HOURS } from "./shared/constants";
 
 export function HomePageComponent() {
   return (
@@ -163,14 +164,7 @@ export function HomePageComponent() {
                   <div className="flex flex-col w-full">
                     <h3 className="font-semibold mb-2">Hours of Operation</h3>
                     <ul className="space-y-2">
-                      {[
-                        {
-                          days: "Mon, Tue, Thu, Fri",
-                          time: "7:00 AM - 5:30 PM",
-                        },
-                        { days: "Wed", time: "7:00 AM - 3:00 PM" },
-                        { days: "Sat, Sun", time: "Closed" },
-                      ].map((item, index) => (
+                      {CLINIC_HOURS.map((item, index) => (
                         <li
                           key={index}
                           className="flex flex-col sm:flex-row sm:justify-between"

@@ -6,14 +6,9 @@ import Google from "../../public/brand-icons/google.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleMapComponent } from "./google-map";
+import { CLINIC_HOURS } from "./shared/constants";
 
 export function ContactPageComponent() {
-  const hours = [
-    { days: "Mon, Tue, Thu, Fri", time: "7:00 AM - 5:30 PM" },
-    { days: "Wed", time: "7:00 AM - 3:00 PM" },
-    { days: "Sat, Sun", time: "Closed" },
-  ];
-
   return (
     <div className="container mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
@@ -61,11 +56,14 @@ export function ContactPageComponent() {
             <Clock className="h-5 w-5 text-gray-500 mt-1" />
             <div className="flex flex-col w-full">
               <h2 className="font-semibold mb-2">Hours of Operation</h2>
-              <ul className="text-sm space-y-1">
-                {hours.map((item, index) => (
-                  <li key={index} className="flex justify-between">
-                    <span className="min-w-[140px]">{item.days}</span>
-                    <span>{item.time}</span>
+              <ul className="text-sm space-y-2">
+                {CLINIC_HOURS.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex flex-col sm:flex-row sm:justify-between"
+                  >
+                    <span className="font-medium sm:inline">{item.days}</span>
+                    <span className="whitespace-nowrap">{item.time}</span>
                   </li>
                 ))}
               </ul>
