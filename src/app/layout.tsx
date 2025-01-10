@@ -18,19 +18,30 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Moultrie Animal Clinic",
-  description: "Moultrie Animal Clinic",
+  description:
+    "Moultrie Animal Clinic - Compassionate Care for Your Furry Family Members Since 1985",
+  keywords:
+    "veterinary, animal clinic, pet care, Moultrie, Saint Augustine, FL",
   openGraph: {
     type: "website",
     url: "https://moultrieanimalclinic.com/",
     siteName: "Moultrie Animal Clinic",
-    //   images: [
-    //     {
-    //       url: ogImageUrl,
-    //       width: 1200,
-    //       height: 675,
-    //       alt: t("ogImageAlt"),
-    //     },
-    //   ],
+    locale: "en_US",
+    images: [
+      {
+        url: "/home/moultrie-logo-color.jpg",
+        width: 612,
+        height: 336,
+        alt: "Moultrie Animal Clinic logo with lighthouse and clinic name",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Moultrie Animal Clinic",
+    description:
+      "Moultrie Animal Clinic - Compassionate Care for Your Furry Family Members Since 1985",
+    images: ["home/moultrie-logo-color.jpg"],
   },
   robots: {
     index: true,
@@ -47,6 +58,16 @@ export const metadata: Metadata = {
     width: "device-width",
     initialScale: 1,
     maximumScale: 1,
+  },
+  alternates: {
+    canonical: "https://moultrieanimalclinic.com",
+    languages: {
+      "en-US": "https://moultrieanimalclinic.com",
+    },
+  },
+  authors: [{ name: "Moultrie Animal Clinic" }],
+  verification: {
+    google: `${process.env.GOOGLE_SITE_VERIFICATION}`,
   },
 };
 

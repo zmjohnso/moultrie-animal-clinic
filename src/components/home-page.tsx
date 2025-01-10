@@ -23,7 +23,7 @@ export function HomePageComponent() {
       <section className="text-center mb-12">
         <Image
           src={MoultrieLogo}
-          alt="Full Moultrie Animal Clinic logo with lighthouse and clinic name."
+          alt="Moultrie Animal Clinic logo with lighthouse and clinic name."
           priority
           placeholder="blur"
           className="mx-auto mb-8 w-full max-w-xl"
