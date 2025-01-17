@@ -7,10 +7,6 @@ jest.mock("next/image", () => ({
   default: (props: any) => <img {...props} />,
 }));
 
-jest.mock("@/components/google-map", () => ({
-  GoogleMapComponent: () => <div data-testid="google-map">Google Map</div>,
-}));
-
 describe("HomePageComponent", () => {
   beforeEach(() => {
     render(<HomePageComponent />);
@@ -18,10 +14,10 @@ describe("HomePageComponent", () => {
 
   it("renders the Moultrie Animal Clinic logo and tagline", () => {
     const logo = screen.getByAltText(
-      "Full Moultrie Animal Clinic logo with lighthouse and clinic name."
+      "Moultrie Animal Clinic logo with lighthouse and clinic name."
     );
     const tagline = screen.getByText(
-      "Family Owned and Providing Compassionate Care for Your Furry Family Members Since 1985!"
+      "Family Owned - Providing Compassionate Care for Your Furry Family Members Since 1985"
     );
 
     expect(logo).toBeInTheDocument();
@@ -50,7 +46,11 @@ describe("HomePageComponent", () => {
     const servicesHeading = screen.getByRole("heading", {
       name: "Our Services",
     });
-    const serviceCards = screen.getAllByRole("heading", { level: 3 });
+    const serviceCards = screen
+      .getAllByRole("heading", { level: 3 })
+      .filter((heading) =>
+        heading.closest("section")?.textContent?.includes("Our Services")
+      );
     const viewAllServicesButton = screen.getByRole("link", {
       name: "View All Services",
     });
@@ -89,7 +89,7 @@ describe("HomePageComponent", () => {
   });
 
   it("renders the Google Map component", () => {
-    const googleMap = screen.getByTestId("google-map");
-    expect(googleMap).toBeInTheDocument();
+    const map = screen.getByTitle("Google Map of Moultrie Animal Clinic");
+    expect(map).toBeInTheDocument();
   });
 });

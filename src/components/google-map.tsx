@@ -35,7 +35,7 @@ export function GoogleMapComponent() {
         title="Google Map of Moultrie Animal Clinic"
         onLoad={() => setIsMapLoaded(true)}
         className={isMapLoaded ? "opacity-100" : "opacity-0"}
-      ></iframe>
+      />
     </div>
   );
 }

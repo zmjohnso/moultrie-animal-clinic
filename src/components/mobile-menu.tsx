@@ -24,7 +24,7 @@ export function MobileMenu({ navItems }: MobileMenuProps) {
       <SheetTrigger asChild>
         <Button variant="outline" size="icon">
           <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle menu</span>
+          <span className="sr-only">Mobile Toggle Menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">

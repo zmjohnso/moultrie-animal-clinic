@@ -2,50 +2,83 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { AppHeaderComponent } from "@/components/app-header";
 
+jest.mock("next/image", () => ({
+  __esModule: true,
+  default: (props: any) => <img {...props} />,
+}));
+
+jest.mock("next/link", () => ({
+  __esModule: true,
+  default: ({
+    children,
+    href,
+  }: {
+    children: React.ReactNode;
+    href: string;
+  }) => <a href={href}>{children}</a>,
+}));
+
 describe("AppHeaderComponent", () => {
-  it("renders the App Header Component and associated content", () => {
+  beforeEach(() => {
     render(<AppHeaderComponent />);
+  });
 
-    const moultrieLogo = screen.getByRole("img", {
-      name: "Moultrie Animal Clinic Logo",
-    });
+  it("renders the Moultrie Animal Clinic logo", () => {
+    const logo = screen.getByAltText(
+      "Small Moultrie Animal Clinic dog and cat logo."
+    );
+    expect(logo).toBeInTheDocument();
+    expect(logo).toHaveAttribute("src");
+  });
 
-    const homeLink = screen.getByRole("link", {
-      name: "Home",
-    });
-    const meetOurTeamLink = screen.getByRole("link", {
-      name: "Meet Our Team",
-    });
-    const ourServicesLink = screen.getByRole("link", {
-      name: "Our Services",
-    });
-    const takeATourLink = screen.getByRole("link", {
-      name: "Take a Tour",
-    });
-    const newClientsLink = screen.getByRole("link", {
-      name: "New Clients",
-    });
-    const onlinePharmacyLink = screen.getByRole("link", {
-      name: "Online Pharmacy",
-    });
+  it("renders navigation links with correct hrefs", () => {
+    const navItems = [
+      { href: "/", label: "Home" },
+      { href: "/meet-our-team", label: "Meet Our Team" },
+      { href: "/our-services", label: "Our Services" },
+      { href: "/take-a-tour", label: "Take a Tour" },
+      { href: "/new-clients", label: "New Clients" },
+      {
+        href: "https://moultrieanimalclinic.securevetsource.com/site/view/site/view/HomeDelivery.pml?retUrl=https://moultrieanimalclinic.com/&cmsTitle=MOULTRIE%20ANIMAL%20CLINIC",
+        label: "Online Pharmacy",
+      },
+    ];
 
-    const facebookLogo = screen.getByRole("img", {
-      name: "Facebook Icon",
+    navItems.forEach(({ href, label }) => {
+      const link = screen.getByRole("link", { name: label });
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", href);
     });
-    const phoneNumber = screen.getByRole("link", {
-      name: "+1 (904) 797-5601",
+  });
+
+  it("renders social links and contact information", () => {
+    const facebookLink = screen.getByRole("link", {
+      name: /visit the moultrie animal clinic facebook/i,
     });
+    expect(facebookLink).toBeInTheDocument();
+    expect(facebookLink).toHaveAttribute(
+      "href",
+      "https://www.facebook.com/Moultrieanimalclinic"
+    );
 
-    expect(moultrieLogo).toBeInTheDocument();
+    const phoneLink = screen.getByRole("link", { name: "+1 (904) 797-5601" });
+    expect(phoneLink).toBeInTheDocument();
+    expect(phoneLink).toHaveAttribute("href", "tel:+19047975601");
 
-    expect(homeLink).toBeInTheDocument();
-    expect(meetOurTeamLink).toBeInTheDocument();
-    expect(ourServicesLink).toBeInTheDocument();
-    expect(takeATourLink).toBeInTheDocument();
-    expect(newClientsLink).toBeInTheDocument();
-    expect(onlinePharmacyLink).toBeInTheDocument();
+    const emailLink = screen.getByRole("link", {
+      name: "moultrieanimalclinic@gmail.com",
+    });
+    expect(emailLink).toBeInTheDocument();
+    expect(emailLink).toHaveAttribute(
+      "href",
+      "mailto:moultrieanimalclinic@gmail.com"
+    );
+  });
 
-    expect(facebookLogo).toBeInTheDocument();
-    expect(phoneNumber).toBeInTheDocument();
+  it("renders the mobile menu", () => {
+    const mobileMenu = screen.getByRole("button", {
+      name: "Mobile Toggle Menu",
+    });
+    expect(mobileMenu).toBeInTheDocument();
   });
 });
