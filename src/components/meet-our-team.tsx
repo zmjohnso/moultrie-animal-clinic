@@ -28,7 +28,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
   profilePhoto,
 }) => {
   return (
-    <Card className="w-full mb-4 overflow-hidden">
+    <Card className="w-full mb-4 overflow-hidden" data-testid="team-member-card">
       <div className="flex flex-col sm:flex-row h-full">
         <div className="w-full sm:w-1/4 relative">
           <div className="aspect-[4/3] sm:aspect-[3/4]">
