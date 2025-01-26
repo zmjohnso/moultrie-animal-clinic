@@ -61,7 +61,7 @@ export function TakeATourComponent({
                   "opacity-100": !isLoading,
                 }
               )}
-              onLoadingComplete={() => setIsLoading(false)}
+              onLoad={() => setIsLoading(false)}
             />
           </div>
         </div>
