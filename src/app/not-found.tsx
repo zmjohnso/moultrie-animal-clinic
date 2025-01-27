@@ -21,8 +21,8 @@ export default function NotFound() {
         </CardHeader>
         <CardContent>
           <p className="text-center text-muted-foreground">
-            Oops! It seems like this page has gone for a walk. Don't worry, our
-            other pages are still here to keep you company!
+            Oops! It seems like this page has gone for a walk. Don&apos;t worry,
+            our other pages are still here to keep you company!
           </p>
         </CardContent>
         <CardFooter className="flex justify-center">
