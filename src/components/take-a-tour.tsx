@@ -51,6 +51,7 @@ export function TakeATourComponent({
           <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
             {isLoading && <ImageSkeleton />}
             <Image
+              key={currentImage}
               src={images[currentImage].url}
               alt={images[currentImage].description}
               fill
@@ -88,7 +89,7 @@ export function TakeATourComponent({
       </div>
 
       <div className="text-center mb-8">
-        <p className="font-semibold">{images[currentImage].description}</p>
+        <p className="font-semibold">{images[currentImage].title}</p>
         <p className="text-sm text-foreground">
           Image {isLoading ? "..." : `${currentImage + 1} of ${images.length}`}
         </p>
