@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "veterinary, animal clinic, pet care, Moultrie, Saint Augustine, FL",
   openGraph: {
     type: "website",
-    url: "https://moultrieanimalclinic.com/",
+    url: "https://www.moultrieanimalclinic.com/",
     siteName: "Moultrie Animal Clinic",
     locale: "en_US",
     images: [
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
     maximumScale: 1,
   },
   alternates: {
-    canonical: "https://moultrieanimalclinic.com",
+    canonical: "https://www.moultrieanimalclinic.com",
     languages: {
-      "en-US": "https://moultrieanimalclinic.com",
+      "en-US": "https://www.moultrieanimalclinic.com",
     },
   },
   authors: [{ name: "Moultrie Animal Clinic" }],
