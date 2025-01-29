@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "https://www.moultrieanimalclinic.com/home/moultrie-logo-color.jpg",
         width: 612,
         height: 336,
-        alt: "Moultrie Animal Clinic logo with lighthouse and clinic name",
+        alt: "Moultrie Animal Clinic logo with lighthouse and clinic name.",
       },
     ],
   },
