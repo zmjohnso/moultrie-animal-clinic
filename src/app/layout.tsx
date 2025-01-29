@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/home/moultrie-logo-color.jpg",
+        url: "https://www.moultrieanimalclinic.com/home/moultrie-logo-color.jpg",
         width: 612,
         height: 336,
         alt: "Moultrie Animal Clinic logo with lighthouse and clinic name",
@@ -41,7 +41,9 @@ export const metadata: Metadata = {
     title: "Moultrie Animal Clinic",
     description:
       "Moultrie Animal Clinic - Compassionate Care for Your Furry Family Members Since 1985",
-    images: ["home/moultrie-logo-color.jpg"],
+    images: [
+      "https://www.moultrieanimalclinic.com/home/moultrie-logo-color.jpg",
+    ],
   },
   robots: {
     index: true,
