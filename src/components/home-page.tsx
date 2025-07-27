@@ -15,7 +15,7 @@ import {
 import { GoogleMapComponent } from "./google-map";
 import MoultrieLogo from "../../public/home/moultrie-logo-color.jpg";
 import DogLickingCat from "../../public/home/dog-lick-cat.jpg";
-import { CLINIC_HOURS } from "./shared/constants";
+import { CLINIC_HOURS, MOULTRIE_GOOGLE_REVIEWS_LINK } from "./shared/constants";
 
 export function HomePageComponent() {
   return (
@@ -181,7 +181,7 @@ export function HomePageComponent() {
                 <div className="flex items-center space-x-4">
                   <Star className="h-6 w-6" />
                   <Link
-                    href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic"
+                    href={MOULTRIE_GOOGLE_REVIEWS_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:underline"

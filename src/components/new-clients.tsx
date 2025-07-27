@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Testimonials } from "./testimonials";
 import TitlePhoto from "../../public/new-clients/title-photo.jpg";
+import { MOULTRIE_GOOGLE_REVIEWS_LINK } from "./shared/constants";
 
 export function NewClientsComponent() {
   return (
@@ -66,7 +67,7 @@ export function NewClientsComponent() {
       <div className="text-center mb-8">
         <Button asChild size="lg" className="text-lg">
           <Link
-            href="https://www.google.com/search?q=Moultrie+Animal+Clinic&oq=Moultrie+Animal+Clinic+reviews"
+            href={MOULTRIE_GOOGLE_REVIEWS_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
