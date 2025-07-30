@@ -6,7 +6,7 @@ import Google from "../../public/brand-icons/google.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { GoogleMapComponent } from "./google-map";
-import { CLINIC_HOURS } from "./shared/constants";
+import { CLINIC_HOURS, MOULTRIE_GOOGLE_LINK } from "./shared/constants";
 
 export function ContactPageComponent() {
   return (
@@ -86,7 +86,7 @@ export function ContactPageComponent() {
             </Button>
             <Button asChild variant="outline" size="sm">
               <Link
-                href="https://www.google.com/search?q=Moultrie+Animal+Clinic"
+                href={MOULTRIE_GOOGLE_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
               >
