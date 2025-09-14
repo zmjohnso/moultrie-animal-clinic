@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { getJobTypes, getMeetOurTeamPageData } from "@/lib/api";
+import { getMeetOurTeamPageData } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import clsx from "clsx";
 import Kramer from "../../public/meet-our-team/kramer.jpg";
@@ -74,7 +74,6 @@ interface GridPhotos {
 
 export async function MeetOurTeamComponent() {
   const teamMembers = await getMeetOurTeamPageData();
-  const jobTypes = await getJobTypes();
 
   // Preserve Contentful's original order
   const groupedTeamMembersMap = new Map<

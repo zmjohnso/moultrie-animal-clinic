@@ -55,17 +55,3 @@ export interface TakeATourResponse {
     takeATourCollection: TakeATourCollection;
   };
 }
-
-export interface JobType {
-  title: string;
-}
-
-export interface JobTypeCollection {
-  items: JobType[];
-}
-
-export interface JobTypeResponse {
-  data: {
-    jobTypeCollection: JobTypeCollection;
-  };
-}
