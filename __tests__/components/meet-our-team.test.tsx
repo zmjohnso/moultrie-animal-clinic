@@ -4,12 +4,6 @@ import { MeetOurTeamComponent } from "@/components/meet-our-team";
 
 // Mock the API functions
 jest.mock("@/lib/api", () => ({
-  getJobTypes: jest
-    .fn()
-    .mockResolvedValue([
-      { title: "Veterinarian" },
-      { title: "Office Manager" },
-    ]),
   getMeetOurTeamPageData: jest.fn().mockResolvedValue({
     heading: "Meet Our Team",
     teamMembersCollection: {

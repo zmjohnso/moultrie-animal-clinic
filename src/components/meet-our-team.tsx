@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import { getJobTypes, getMeetOurTeamPageData } from "@/lib/api";
+import { getMeetOurTeamPageData } from "@/lib/api";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import clsx from "clsx";
 import Kramer from "../../public/meet-our-team/kramer.jpg";
@@ -74,14 +74,28 @@ interface GridPhotos {
 
 export async function MeetOurTeamComponent() {
   const teamMembers = await getMeetOurTeamPageData();
-  const jobTypes = await getJobTypes();
 
-  const groupedTeamMembers = jobTypes.map((jobType) => ({
-    title: jobType.title,
-    members: teamMembers.teamMembersCollection.items.filter(
-      (x) => x.jobTitle.title === jobType.title
-    ),
-  }));
+  // Preserve Contentful's original order
+  const groupedTeamMembersMap = new Map<
+    string,
+    typeof teamMembers.teamMembersCollection.items
+  >();
+
+  for (const member of teamMembers.teamMembersCollection.items) {
+    const title = member.jobTitle.title;
+    if (!groupedTeamMembersMap.has(title)) {
+      groupedTeamMembersMap.set(title, []);
+    }
+    groupedTeamMembersMap.get(title)!.push(member);
+  }
+
+  // Convert Map to array of { title, members }
+  const groupedTeamMembers = Array.from(groupedTeamMembersMap.entries()).map(
+    ([title, members]) => ({
+      title,
+      members,
+    })
+  );
 
   const gridPhotos: GridPhotos[] = [
     { alt: "Dog looking to the right.", url: Kramer },
