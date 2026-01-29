@@ -7,6 +7,7 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
 } from "@/components/ui/sheet";
 
 interface NavItem {
@@ -28,6 +29,7 @@ export function MobileMenu({ navItems }: MobileMenuProps) {
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <nav className="flex flex-col space-y-4 mt-4">
           {navItems.map((item) => (
             <SheetClose asChild key={item.href}>

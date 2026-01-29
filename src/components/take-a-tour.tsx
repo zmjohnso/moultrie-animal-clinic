@@ -55,6 +55,7 @@ export function TakeATourComponent({
               src={images[currentImage].url}
               alt={images[currentImage].description}
               fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
               className={clsx(
                 "object-contain transition-opacity duration-300",
                 {
